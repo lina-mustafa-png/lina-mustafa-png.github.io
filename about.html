@@ -10,6 +10,8 @@
 
 </head>
 <body>
+    <button id="backbtn"> <img src="backbtn.png" width="20" height="20"></button>
+
     <main class="about-page">
         <img class="stamps-top" src="images/top-right.png" alt="">
         <img class="stamps-bottom" src="images/bottom-left.png" alt="">
@@ -45,5 +47,11 @@
     </main>
 
     <script src="about.js"></script>
+
+    <script>
+        document.getElementById("backbtn").onclick = function () {
+            window.location.href = "index.html#menu";
+        };
+    </script>
 </body>
 </html>

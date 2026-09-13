@@ -204,6 +204,51 @@ html, body {
     cursor: pointer;
 }
 
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+#backbtn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    background-color: #f7e5d9;
+    box-shadow: 0 7px 16px rgb(62 41 33 / 25%);
+    transform: rotate(0deg) translateY(-2px);
+}
+
+#backbtn:active {
+    transform: rotate(0deg) translateY(1px);
+    box-shadow: 0 3px 7px rgb(62 41 33 / 18%);
+}
+
+#backbtn:focus-visible {
+    outline: 3px solid #a45c6d;
+    outline-offset: 3px;
+}
+
 /* open flap */
 .envelope.is-open .env-flap {
     animation: open-flap 0.7s ease forwards, hide-envelope 0.25s ease 2.15s forwards;
@@ -345,9 +390,9 @@ html, body {
         font-size: 1rem;
     }
 
-    .greeting {
+    /* .greeting {
         top: -2%;
-    }
+    } */
 
     .content {
         padding: 0;
@@ -376,6 +421,14 @@ html, body {
         top: auto;
         bottom: 7%;
         animation: postcard-out-mobile 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+    }
+
+    #backbtn {
+        top: 1rem;
+        left: 1rem;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
     }
 }
 
