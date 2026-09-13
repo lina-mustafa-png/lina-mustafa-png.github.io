@@ -59,6 +59,7 @@ html, body {
     width: 94%;
     max-width: 94%;
     height: auto;
+    min-height: clamp(480px, 58svh, 580px);
     padding: clamp(1rem, 2vw, 1.6rem);
     display: grid;
     grid-template-columns: minmax(0, 38%) minmax(0, 62%);
@@ -75,6 +76,7 @@ html, body {
 }
 
 .photo-area {
+    align-self: center;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -262,6 +264,7 @@ html, body {
     .postcard {
         width: 94%;
         max-width: 94%;
+        min-height: min(68svh, 570px);
         padding: 0.9rem;
         grid-template-columns: 1fr;
         gap: 0.45rem;
