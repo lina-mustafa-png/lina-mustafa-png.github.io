@@ -17,6 +17,9 @@ html, body {
 }
 
 .about-heading {
+    position: relative;
+    z-index: 20;
+    flex-shrink: 0;
     margin: 0 0 1rem;
     color: #5a382d;
     font-size: clamp(2rem, 4vw, 3.5rem);
@@ -26,14 +29,15 @@ html, body {
 .stage {
     position: relative;
     width: min(92vw, 900px);
-    height: min(76svh, 650px);   
+    height: min(72svh, 620px);   
+    margin-top: clamp(1rem, 3vh, 2.5rem);
 }
 
 .envelope {
     position: absolute;
     left: 50%;
-    bottom: 4%;
-    width: min(78vw, 820px);
+    bottom: -2%;
+    width: min(70vw, 720px);
     aspect-ratio: 1.8 / 1;
     transform: translateX(-50%);
     perspective: 1200px;
@@ -56,8 +60,8 @@ html, body {
     z-index: 2;
     left: 50%;
     bottom: 7%;
-    width: 94%;
-    max-width: 94%;
+    width: 104%;
+    max-width: 104%;
     height: auto;
     min-height: clamp(480px, 55svh, 580px);
     padding: clamp(1rem, 2vw, 1.6rem);
@@ -217,19 +221,19 @@ html, body {
     58% {
         z-index: 2;
         opacity: 1;
-        transform: translate(-50%, -112%) scale(1);
+        transform: translate(-50%, -82%) scale(1);
     }
 
     59% {
         z-index: 6;
-        transform: translate(-50%, -112%) scale(1);
+        transform: translate(-50%, -82%) scale(1);
     }
 
     100% {
         z-index: 6;
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, -15%) scale(1);
+        transform: translate(-50%, 6%) scale(1);
     }
 }
 
@@ -260,17 +264,13 @@ html, body {
     }
 
     .envelope {
-        bottom: 5%;
-        width: min(92vw, 440px);
+        bottom: 2%;
+        width: min(84vw, 400px);
     }
 
     .postcard {
-        min-height: 0;
-        width: min(92vw, 440px);
-        max-width: min(92vw, 440px);
-        /* padding: 0.9rem;
-        grid-template-columns: 1fr;
-        gap: 0.45rem; */
+        width: min(92vw, 420px);
+        max-width: min(92vw, 420px);
         overflow: hidden;
     }
 
@@ -320,7 +320,7 @@ html, body {
         transform: translate(-50%, 15%) scale(0.96);
     }
 
-     10% {
+    10% {
         z-index: 2;
         opacity: 1;
         visibility: visible;
@@ -328,25 +328,22 @@ html, body {
 
     58% {
         z-index: 2;
-        top: 18svh;
-
+        top: 23svh;
         opacity: 1;
         transform: translate(-50%, 0) scale(1);
     }
 
     59% {
         z-index: 6;
-        top: 18svh;
+        top: 23svh;
         transform: translate(-50%, 0) scale(1);
     }
 
     100% {
         z-index: 6;
-        top: 58svh;
-
+        top: 62svh;
         opacity: 1;
         visibility: visible;
-
         transform: translate(-50%, -50%) scale(1);
     }
 }
