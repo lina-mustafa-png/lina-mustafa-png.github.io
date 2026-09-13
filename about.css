@@ -35,13 +35,13 @@ html, body {
 }
 
 .stamps-top {
-    top: 2rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
 }
 
 .stamps-bottom {
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 1rem;
+    left: 1rem;
 }
 
 .about-heading {
