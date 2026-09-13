@@ -67,8 +67,8 @@ html, body {
     z-index: 2;
     left: 50%;
     bottom: 7%;
-    width: 104%;
-    max-width: 104%;
+    width: 100%;
+    max-width: 100%;
     height: min(56svh, 540px);
     min-height: 0;
     padding: clamp(1rem, 2vw, 1.6rem);
@@ -272,15 +272,17 @@ html, body {
 
     .envelope {
         bottom: 0;
-        width: min(84vw, 400px);
+        width: min(70vw, 720px);
     }
 
     .postcard {
-        width: min(92vw, 420px);
+        /* width: min(92vw, 420px);
         max-width: min(92vw, 420px);
         height: min(68svh, 560px);
         min-height: 0;
-        overflow: hidden;
+        overflow: hidden; */
+        width: 100%;
+        max-width: 100%;
     }
 
     .photo {
