@@ -41,27 +41,31 @@
     background: #d9a982;
     border: 2px solid #795548;
     border-radius: 6px;
-    box-shadow: 0 16px 35px rgb(62 41 33 / 22%);
+    opacity: 1;
+    transition: opacity 0.35s ease 0.9s;
+    /* box-shadow: 0 16px 35px rgb(62 41 33 / 22%); */
 }
 
 .postcard {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     left: 50%;
     bottom: 7%;
     width: 92%;
-    min-height: 82%;
+    max-height: 68svh;
     padding: 1.5rem;
     display: grid;
     grid-template-columns: 40% 60%;
     gap: 1.5rem;
+    overflow-y: auto;
     background: #fffaf1;
     border: 1px solid #b89d80;
     border-radius: 4px;
-    box-shadow: 0 10px 25px rgb(62 41 33 / 20%);
-    opacity: 0.8;
-    transform: translate(-50%, 25%) scale(0.94);
-    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+    box-shadow: 0 16px 35px rgb(62 41 33 / 20%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 25%) scale(0.92);
+    transition: bottom 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease 0.3s, visibility 0s linear 0.3s, width 0.7s ease;
 }
 
 .photo-area {
@@ -129,18 +133,21 @@
     background: #e8bb96;
     border: 2px solid #795548;
     border-radius: 6px;
+    opacity: 1;
     clip-path: polygon(0 28%, 50% 70%, 100% 28%, 100% 100%, 0 100%);
+    transition: opacity 0.35s ease 0.9s;
 }
 
 .env-flap {
     position: absolute;
     z-index: 4;
     inset: 0;
-    background: #efc7a6;
+    background-color: #efc7a6;
     border-top: 2px solid #795548;
+    opacity: 1;
     clip-path: polygon(0 0, 100% 0, 50% 65%);
     transform-origin: top center;
-    transition: transform 0.7s ease, z-index 0s linear 0.35s;
+    transition: transform 0.7s ease, opacity 0.35s ease 0.9s, z-index 0s linear 0.35s;
 }
 
 .env-button {
@@ -155,11 +162,22 @@
 .envelope.is-open .env-flap {
     z-index: 1;
     transform: rotateX('180deg');
+    opacity: 0;
+}
+
+.envelope.is-open .env-back, 
+.envelope.is-open .env-front {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .envelope.is-open .postcard {
+    z-index: 10;
+    width: 110%;
+    bottom: 50%;
     opacity: 1;
-    transform: translate(-50%, -70%) scale(1);
+    visibility: visible;
+    transform: translate(-50%, 50%) scale(1);
 }
 
 @media (max-width: 650px) {
@@ -185,11 +203,10 @@
 
     .postcard {
         width: 88%;
-        max-height: 68svh;
+        max-height: 72svh;
         padding: 1rem;
         grid-template-columns: 1fr;
         gap: 0.75rem;
-        overflow-y: auto;
     }
 
     .photo {
@@ -217,6 +234,9 @@
     }
 
     .envelope.is-open .postcard {
-        transform: translate(-50%, -54%) scale(1);
+        width: 96vw;
+        max-height: 78svh;
+        bottom: 50%;
+        transform: translate(-50%, 50%) scale(1);
     }
 }
