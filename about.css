@@ -34,27 +34,14 @@ html, body {
     filter: drop-shadow(0 4px 5px rgb(62 41 33 / 15%));
 }
 
-/* .stamps-top {
-    top: 1rem;
-    right: 1rem;
-}
-
-.stamps-bottom {
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-} */
-
 .stamps-top {
     top: 0.5rem;
     right: 0;
-    width: clamp(135px, 16vmin, 210px);
 }
 
 .stamps-bottom {
     bottom: 0.7rem;
     left: 0.7rem;
-    width: clamp(120px, 15vmin, 195px);
 }
 
 .about-heading {
@@ -412,9 +399,9 @@ html, body {
     }
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .stamps-top,
     .stamps-bottom {
         display: none;
     }
-}
+} */
