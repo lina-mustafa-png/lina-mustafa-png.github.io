@@ -20,18 +20,18 @@
 
 .stage {
     position: relative;
-    width: min(90vw, 850px);
-    height: min(75svh, 650px);   
+    width: min(94vw, 1100px);
+    height: min(78svh, 700px);   
 }
 
 .envelope {
     position: absolute;
     left: 50%;
     bottom: 4%;
-    width: min(75vw, 660px);
-    aspect-ratio: 1.7 / 1;
+    width: min(88vw, 1000px);
+    aspect-ratio: 1.8 / 1;
     transform: translateX(-50%);
-    perspective: 1000px;
+    perspective: 1200px;
 }
 
 .env-back {
@@ -51,37 +51,41 @@
     z-index: 2;
     left: 50%;
     bottom: 7%;
-    width: 92%;
-    max-width: 92%;
-    box-sizing: border-box;
-    padding: 1.5rem;
+    width: 96%;
+    max-width: 96%;
+    height: auto;
+    padding: clamp(1rem, 2.5vw, 2rem);
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 1.5rem;
-    background: #fffaf1;
+    grid-template-columns: 38% 62%;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+    background-color: #fffaf1;
     border: 1px solid #b89d80;
     border-radius: 4px;
     box-shadow: 0 16px 35px rgb(62 41 33 / 25%);
-    max-height: 68svh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, 30%) scale(0.96);
 }
 
-.photo-area {
+/* .photo-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.75rem;
+} */
+
+.photo-area, .content {
+    min-width: 0;
 }
 
 .photo {
     display: block;
     width: 100%;
-    max-height: 260px;
+    max-height: 100%;
     object-fit: cover;
 
     border: 8px solid white;
@@ -96,13 +100,17 @@
 }
 
 .content {
-    position: relative;
+    /* position: relative;
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-    line-height: 1.6;
+    line-height: 1.6; */
+    min-width: 0;
+    overflow-wrap: break-word;
+    font-size: clamp(0.85rem, 1.35vw, 1.1rem);
+    line-height: 1.55;
 }
 
 .content p {
@@ -169,22 +177,33 @@
 
 .envelope.is-open .env-back, 
 .envelope.is-open .env-front {
-    animation: hide-envelope 0.3s ease 1.05s forwards;
+    animation: hide-envelope 0.3s ease 2.1s forwards;
 }
 
 .envelope.is-open .env-flap {
     transform: rotateX(180deg);
-    animation: hide-envelope 0.3s ease 1.05s forwards;
+    animation: open-flap 0.7s ease forwards, hide-envelope 0.3s ease 2.1s forwards;
 }
 
 .envelope.is-open .postcard {
     z-index: 10;
-    /* width: 110%; */
     bottom: 50%;
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 50%) scale(1);
-    animation: postcard-out 1.4s cubic-bezier(0.22s, 1, 0.36, 1) forwards;
+    animation: postcard-out 1.4s cubic-bezier(0.22s, 1, 0.36, 1) 0.7s forwards;
+}
+
+@keyframes open-flap {
+    from {
+        z-index: 4;
+        transform: rotateX(0deg);
+    }
+
+    to {
+        z-index: 1;
+        transform: rotateX(180deg);
+    }
 }
 
 @keyframes postcard-out {
@@ -195,27 +214,28 @@
         transform: translate(-50%, 30%) scale(0.96);
     }
 
-    15% {
+    10% {
         z-index: 2;
         opacity: 1;
         visibility: visible;
     }
 
-    65% {
+    58% {
         z-index: 2;
         opacity: 1;
         transform: translate(-50%, -115%) scale(1);
     }
 
-    66% {
+    59% {
         z-index: 6;
+        transform: translate(-50%, -115%) scale(1);
     }
 
     100% {
         z-index: 6;
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, -48%) scale(1);
+        transform: translate(-50%, -12%) scale(1);
     }
 }
 
