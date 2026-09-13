@@ -134,6 +134,7 @@ html, body {
     font-family: "Pinyon Script", cursive;
     font-size: 1.4rem;
     color: #8b5e4a;
+    pointer-events: none;
 }
 
 .content {
@@ -142,6 +143,7 @@ html, body {
     overflow-wrap: break-word;
     font-size: clamp(0.78rem, 1.25vw, 1rem);
     line-height: 1.5;
+    pointer-events: none;
 }
 
 .content p {
@@ -152,6 +154,7 @@ html, body {
     color: #a45c6d;
     font-size: 1.35em;
     font-weight: 600;
+    pointer-events: none;
 }
 
 .stamp {
@@ -165,6 +168,7 @@ html, body {
     color: #8b5e4a;
     border: 2px dashed #c08d7e;
     transform: rotate(5deg);
+    pointer-events: none;
 }
 
 .env-front {
