@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .about-page {
     min-height: 100vh;
     min-height: 100svh;
@@ -20,15 +25,15 @@
 
 .stage {
     position: relative;
-    width: min(94vw, 1100px);
-    height: min(78svh, 700px);   
+    width: min(92vw, 900px);
+    height: min(76svh, 650px);   
 }
 
 .envelope {
     position: absolute;
     left: 50%;
     bottom: 4%;
-    width: min(88vw, 1000px);
+    width: min(78vw, 820px);
     aspect-ratio: 1.8 / 1;
     transform: translateX(-50%);
     perspective: 1200px;
@@ -51,44 +56,41 @@
     z-index: 2;
     left: 50%;
     bottom: 7%;
-    width: 96%;
-    max-width: 96%;
+    width: 94%;
+    max-width: 94%;
     height: auto;
-    padding: clamp(1rem, 2.5vw, 2rem);
+    padding: clamp(1rem, 2vw, 1.6rem);
     display: grid;
-    grid-template-columns: 38% 62%;
-    gap: clamp(1rem, 3vw, 2.5rem);
+    grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+    gap: clamp(1rem, 2.5vw, 2rem);
     box-sizing: border-box;
     background-color: #fffaf1;
     border: 1px solid #b89d80;
     border-radius: 4px;
     box-shadow: 0 16px 35px rgb(62 41 33 / 25%);
-    max-height: none;
-    overflow: visible;
+    overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, 30%) scale(0.96);
 }
 
-/* .photo-area {
+.photo-area {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;
-} */
-
-.photo-area, .content {
-    min-width: 0;
+    gap: 0.6rem;
 }
 
 .photo {
     display: block;
     width: 100%;
-    max-height: 100%;
+    height: clamp(230px, 36svh, 360px);
     object-fit: cover;
-
+    object-position: center;
     border: 8px solid white;
+    box-sizing: border-box;
     box-shadow: 0 4px 12px rgb(62 41 33 / 22%);
     transform: rotate(-2deg);
 }
@@ -100,21 +102,15 @@
 }
 
 .content {
-    /* position: relative;
-    padding: 1rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-    line-height: 1.6; */
     min-width: 0;
+    align-self: center;
     overflow-wrap: break-word;
-    font-size: clamp(0.85rem, 1.35vw, 1.1rem);
-    line-height: 1.55;
+    font-size: clamp(0.78rem, 1.25vw, 1rem);
+    line-height: 1.5;
 }
 
 .content p {
-    margin: 0 0 0.9rem;
+    margin: 0 0 0.8rem;
 }
 
 .greeting {
@@ -169,38 +165,34 @@
     cursor: pointer;
 }
 
+/* open flap */
 .envelope.is-open .env-flap {
-    z-index: 1;
-    transform: rotateX('180deg');
-    opacity: 0;
+    animation: open-flap 0.7s ease forwards, hide-envelope 0.25s ease 2.15s forwards;
 }
 
+/* move postcard */
+.envelope.is-open .postcard {
+    animation: postcard-out 1.45s cubic-bezier(0.22s, 1, 0.36, 1) 0.7s forwards;
+}
+
+/* hide envelope */
 .envelope.is-open .env-back, 
 .envelope.is-open .env-front {
-    animation: hide-envelope 0.3s ease 2.1s forwards;
-}
-
-.envelope.is-open .env-flap {
-    transform: rotateX(180deg);
-    animation: open-flap 0.7s ease forwards, hide-envelope 0.3s ease 2.1s forwards;
-}
-
-.envelope.is-open .postcard {
-    z-index: 10;
-    bottom: 50%;
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 50%) scale(1);
-    animation: postcard-out 1.4s cubic-bezier(0.22s, 1, 0.36, 1) 0.7s forwards;
+    animation: hide-envelope 0.25s ease 2.15s forwards;
 }
 
 @keyframes open-flap {
-    from {
+    0% {
         z-index: 4;
         transform: rotateX(0deg);
     }
 
-    to {
+    99% {
+        z-index: 4;
+        transform: rotateX(180deg);
+    }
+
+    100% {
         z-index: 1;
         transform: rotateX(180deg);
     }
@@ -223,19 +215,19 @@
     58% {
         z-index: 2;
         opacity: 1;
-        transform: translate(-50%, -115%) scale(1);
+        transform: translate(-50%, -112%) scale(1);
     }
 
     59% {
         z-index: 6;
-        transform: translate(-50%, -115%) scale(1);
+        transform: translate(-50%, -112%) scale(1);
     }
 
     100% {
         z-index: 6;
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, -12%) scale(1);
+        transform: translate(-50%, -15%) scale(1);
     }
 }
 
@@ -253,53 +245,52 @@
     }
 
     .about-heading {
-        margin-top: 1rem;
+        margin-top: 1rem 0 0.5rem;
         font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 
     .stage {
         width: 100%;
-        height: 82svh;
+        height: 84svh;
     }
 
     .envelope {
-        bottom: 4%;
+        bottom: 5%;
         width: min(92vw, 440px);
     }
 
     .postcard {
-        width: 88%;
-        max-width: 88%;
-        max-height: 76svh;
-        padding: 1rem;
+        width: 94%;
+        max-width: 94%;
+        padding: 0.9rem;
         grid-template-columns: 1fr;
-        gap: 0.75rem;
-        overflow-x: hidden;
-        overflow-y: auto;
+        gap: 0.45rem;
+        overflow: hidden;
     }
 
     .photo {
-        width: min(55%, 180px);
-        max-height: 170px;
+        width: min(45%, 145px);
+        height: clamp(120px, 20svh, 160px);
+        margin: 0 auto;
     }
 
     .caption {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     .content {
-        padding: 0.25rem;
-        font-size: clamp(0.78rem, 3.4vw, 0.95rem);
-        line-height: 1.45;
+        padding: 0;
+        font-size: clamp(0.67rem, 2.8vw, 0.82rem);
+        line-height: 1.35;
         text-align: center;
     }
 
     .content p {
-        margin-bottom: 0.65rem;
+        margin-bottom: 0.5rem;
     }
 
     .stamp {
-        width: 40px;
+        width: 36px;
     }
 
     .envelope.is-open .postcard {
