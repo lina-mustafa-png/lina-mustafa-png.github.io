@@ -172,7 +172,7 @@ html, body {
 
 /* move postcard */
 .envelope.is-open .postcard {
-    animation: postcard-out 1.45s cubic-bezier(0.22s, 1, 0.36, 1) 0.7s forwards;
+    animation: postcard-out 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
 }
 
 /* hide envelope */
@@ -245,7 +245,7 @@ html, body {
     }
 
     .about-heading {
-        margin-top: 1rem 0 0.5rem;
+        margin: 1rem 0 0.5rem;
         font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 
