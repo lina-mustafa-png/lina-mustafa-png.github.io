@@ -356,6 +356,11 @@ html, body {
         width: 34px;
     }
 
+    .stamps-top,
+    .stamps-bottom {
+        display: none;
+    }
+
     .envelope.is-open .postcard {
         position: absolute;
         left: 50%;
@@ -398,10 +403,3 @@ html, body {
         transform: translate(-50%, -12%) scale(1);
     }
 }
-
-/* @media (max-width: 900px) {
-    .stamps-top,
-    .stamps-bottom {
-        display: none;
-    }
-} */
