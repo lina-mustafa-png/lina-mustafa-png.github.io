@@ -27,14 +27,14 @@ html, body {
     position: absolute;
     z-index: 10;
     display: block;
-    width: clamp(140px, 13vw, 220px);
+    width: clamp(120px, 15vmin, 200px);
     height: auto;
     opacity: 0.7;
     pointer-events: none;
     filter: drop-shadow(0 4px 5px rgb(62 41 33 / 15%));
 }
 
-.stamps-top {
+/* .stamps-top {
     top: 1rem;
     right: 1rem;
 }
@@ -43,6 +43,18 @@ html, body {
     bottom: 1rem;
     left: 1rem;
     right: 1rem;
+} */
+
+.stamps-top {
+    top: 0.5rem;
+    right: 0;
+    width: clamp(135px, 16vmin, 210px);
+}
+
+.stamps-bottom {
+    bottom: 1rem;
+    left: 1rem;
+    width: clamp(120px, 15vmin, 195px);
 }
 
 .about-heading {
@@ -160,7 +172,7 @@ html, body {
 
 .stamp {
     position: absolute;
-    top: 1.5%;
+    top: 1.75%;
     right: 1.5%;
     width: 52px;
     aspect-ratio: 1;
