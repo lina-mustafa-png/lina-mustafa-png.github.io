@@ -51,7 +51,7 @@ html, body {
     margin: 0 0 1rem;
     color: #5a382d;
     font-family: "Advent Pro", sans-serif;
-    font-size: clamp(2rem, 6.5vw, 3.5rem);
+    font-size: clamp(2rem, 15vw, 3.5rem);
     text-align: center;
 }
 
@@ -88,7 +88,7 @@ html, body {
     position: absolute;
     z-index: 2;
     left: 50%;
-    bottom: -2%;
+    bottom: -3%;
     width: 100%;
     max-width: 100%;
     height: min(63svh, 540px);
