@@ -52,8 +52,8 @@ html, body {
 }
 
 .stamps-bottom {
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 0.7rem;
+    left: 0.7rem;
     width: clamp(120px, 15vmin, 195px);
 }
 
@@ -409,5 +409,12 @@ html, body {
         opacity: 1;
         visibility: visible;
         transform: translate(-50%, -12%) scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .stamps-top,
+    .stamps-bottom {
+        display: none;
     }
 }
