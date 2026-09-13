@@ -51,8 +51,7 @@ html, body {
     margin: 0 0 1rem;
     color: #5a382d;
     font-family: "Advent Pro", sans-serif;
-    /* font-size: clamp(2rem, 15vw, 3.5rem); */
-    font-size: 15vw;
+    font-size: 6vw;
     text-align: center;
 }
 
@@ -89,7 +88,7 @@ html, body {
     position: absolute;
     z-index: 2;
     left: 50%;
-    bottom: -3%;
+    bottom: -4%;
     width: 100%;
     max-width: 100%;
     height: min(63svh, 540px);
@@ -297,7 +296,7 @@ html, body {
         z-index: 20;
         margin: 0.5rem 0;
         flex-shrink: 0;
-        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        font-size: 6vw;
     }
 
     .stage {
