@@ -228,19 +228,19 @@ html, body {
     58% {
         z-index: 2;
         opacity: 1;
-        transform: translate(-50%, -82%) scale(1);
+        transform: translate(-50%, -35%) scale(1);
     }
 
     59% {
         z-index: 6;
-        transform: translate(-50%, -82%) scale(1);
+        transform: translate(-50%, -35%) scale(1);
     }
 
     100% {
         z-index: 6;
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, 6%) scale(1);
+        transform: translate(-50%, -22%) scale(1);
     }
 }
 
