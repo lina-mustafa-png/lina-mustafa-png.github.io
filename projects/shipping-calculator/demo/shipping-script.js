@@ -25,7 +25,7 @@ document.getElementById("type").addEventListener("change", function () {
     });
 
 document.getElementById("size").addEventListener("change", function () {
-    const sizeDecription = document.getElementById("sizeDescription");
+    const sizeDescription = document.getElementById("sizeDescription");
 
     if (this.value === "S"){
         sizeDescription.textContent = "Small: Up to 30 x 20 x 10 cm";
@@ -37,7 +37,7 @@ document.getElementById("size").addEventListener("change", function () {
         sizeDescription.textContent = "Large: Up to 80 x 60 x 50 cm";
     }
     else {
-        sizeDecription.textContent = "";
+        sizeDescription.textContent = "";
     }
 });
 
@@ -50,11 +50,14 @@ function calculateCost(){
 
     let result = document.getElementById("result");
 
-    if (weightInput === "" && distanceInput === "" && shippingType === "Option" && size === "Option") {
-        result.innerHTML = "No data entered.";
+    if (weightInput === "" || distanceInput === "" || shippingType === "Option" || size === "Option") {
+        result.innerHTML = "Please complete all required fields.";
         result.className = "error";
 
-        result.scrollIntoView({behavior: "smooth", block:"center"});
+        result.scrollIntoView({
+            behavior: "smooth", 
+            block:"center"
+        });
         return;
     }
 
@@ -63,6 +66,12 @@ function calculateCost(){
     let insurance = document.getElementById("insurance").checked;
 
     let cost = 3.50 + (weight * 1.20) + (distance * 0.05); // Base cost: weight + distance, with small base fee
+
+    if (weight <= 0 || distance <= 0){
+        result.textContent = "Weight and distance must be greater than zero.";
+        result.className = "error";
+        return;
+    }
 
     //Parcel.java
     if(insurance){

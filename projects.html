@@ -19,15 +19,38 @@
                 <p class="subtitle" style="text-align: center;">A collection of my work using different languages and technologies.</p>
             </header>
 
-            <div class="buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python" style="text-align: center;">Python</button>
-                <button class="filter-btn" data-filter="html" style="text-align: center;">HTML</button>
-                <button class="filter-btn" data-filter="java" style="text-align: center;">Java</button>
-                <button class="filter-btn" data-filter="cpp" style="text-align: center;">C/C++</button>
-            </div>
+            <nav class="buttons">
+                <button class="filter-btn active" type="button" data-filter="all">All</button>
+                <button class="filter-btn" type="button" data-filter="python">Python</button>
+                <button class="filter-btn" type="button" data-filter="html">HTML/CSS</button>
+                <button class="filter-btn" type="button" data-filter="java">Java</button>
+                <button class="filter-btn" type="button" data-filter="cpp">C/C++</button>
+            </nav>
 
-            <section class="projects-grid"></section>
+            <section class="projects-grid">
+                <article class="project-card" data-language="java html">
+                    <img class="project-image" src="images/shipping-preview.png">
+
+                    <div class="project-content">
+                        <span class="project-lang">Java | HTML/CSS | JavaScript</span>
+                        <h2>Shipping Cost Calculator</h2>
+                        <p>An interactive calculator that determines parcel delivery costs using weight distance, size, insurance, and delivery type. This project demonstrates object-oriented programming (OOP) concepts such as inheritance, method overriding, and class specialization.</p>
+                        <ul class="project-skills">
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>OOP</li>
+                            <li>Inheritance</li>
+                            <li>Responsive Design</li>
+                        </ul>
+
+                        <div class="project-links">
+                            <a class="project-link demo" href="projects/shipping-calculator/demo/index.html">Live Demo ↗</a>
+                            <a class="project-link git" href="https://github.com/lina-mustafa-png/shipping-calculator-demo/" target="_blank">GitHub →</a>
+                            <a class="project-link files" href="projects/shipping-calculator/java-code/project-files.html">Code Files →</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
 
         <script src="projects.js"></script>
