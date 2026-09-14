@@ -5,27 +5,15 @@
         <meta charset="UTF-8"/> <!-- describes the charcter system used -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- proper display on different screen sizes -->
         <title>lina's portfolio</title>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="projects.css"/>
         <link rel="icon" type="image/png" href="favicon.png">
-        <!-- title font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
-
-        <!-- p1 font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap" rel="stylesheet">
     <body>
-    <!-- visibility on webpage -->
-        <div class="text">
-            <h1 style="text-align: center;">Projects</h1>
-            <p id="p2" style="text-align: center;">Here is where I'll be keeping track of all my coding projects.</p>
-        </div>
+        <button id="backbtn"> <img src="backbtn.png" width="20" height="20"></button>
+
+        <h1 class="header" style="text-align: center;">Projects</h1>
         <div class="buttons">
             <button id="btn1" style="text-align: center;">Python</button>
             <button id="btn2" style="text-align: center;">HTML</button>
@@ -34,6 +22,12 @@
         </div>
 
         <script src="projects.js"></script>
+
+        <script>
+            document.getElementById("backbtn").onclick = function () {
+                window.location.href = "index.html#menu";
+            };
+        </script>
     </body>
     </head>
 </html>

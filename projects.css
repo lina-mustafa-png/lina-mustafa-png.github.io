@@ -1,3 +1,14 @@
+.header {
+    position: relative;
+    z-index: 20;
+    flex-shrink: 0;
+    margin: 0 0 1rem;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 6vw;
+    text-align: center;
+}
+
 .buttons{
     display: flex;
     justify-content: center;
@@ -17,4 +28,49 @@
 #btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover{
     background-color:rgb(235, 232, 205);
     transform:scale(1.05);
+}
+
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+#backbtn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    background-color: #f7e5d9;
+    box-shadow: 0 7px 16px rgb(62 41 33 / 25%);
+    transform: rotate(0deg) translateY(-2px);
+}
+
+#backbtn:active {
+    transform: rotate(0deg) translateY(1px);
+    box-shadow: 0 3px 7px rgb(62 41 33 / 18%);
+}
+
+#backbtn:focus-visible {
+    outline: 3px solid #a45c6d;
+    outline-offset: 3px;
 }
