@@ -4,13 +4,14 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: #fceded;
 }
 
 body {
     margin: 0;
     padding: 0;
-    /* background-color: #fceded; */
-    color: #fceded;
+    background-color: #fceded;
+    /* color: #fceded; */
     font-family: "Andada Pro", serif;
     overflow-x: hidden;
 }
