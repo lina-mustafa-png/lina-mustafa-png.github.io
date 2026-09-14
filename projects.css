@@ -160,3 +160,19 @@ body {
     outline: 3px solid #a45c6d;
     outline-offset: 3px;
 }
+
+@media (max-width: 650px) {
+    .projects-grid {
+        width: 100%;
+        max-width: 500px;
+        margin: 2rem auto 0;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
