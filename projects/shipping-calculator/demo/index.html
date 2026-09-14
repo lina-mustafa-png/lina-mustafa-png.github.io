@@ -3,92 +3,121 @@
     <head> 
         <meta charset="UTF-8"/> <!-- describes the charcter system used -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- proper display on different screen sizes -->
-        <title>Shipping Calculator Demo</title>
+        <title>Shipping Cost Calculator</title>
         <link rel="stylesheet" href="shipping-style.css"/>
         <link rel="icon" type="image/png" href="../../../favicon.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&display=swap" rel="stylesheet">   
     </head>
     <body>
-        <button id="backbtn1"> <img src="../../../backbtn.png" width="20" height="20"> Back</button>
+        <button id="backbtn" type="button"><img src="../../../backbtn.png" width="20" height="20"></button>
 
-        <h1>Shipping Cost Calculator</h1>
-        <p id="overview">This project calculates parcel delivery costs based on factors such as weight, distance, parcel size, insurance, and delivery type. This project uses object-oriented programming concepts like inheritance, method overriding, and class specialization to apply different pricing rules for standard, express, and international shipments.</p>
+        <main class="shipping-page">
+            <header class="page-intro">
+                <span class="project-label">Project Demo</span>
+                <h1>Shipping Cost Calculator</h1>
+                <p>Estimate parcel delivery costs based on weight, distance, size, insurance, and delivery service.</p>
+            </header>
+
+            <section class="calculator-card">
+                <form id="shipping-form">
+                    <div class="form-heading">
+                        <h2>Shipment Details</h2>
+                        <p>Enter the parcel information below.</p>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="form-field">
+                            <label for="type">Delivery service</label>
+                            <select id="type" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <option value="standard">Standard</option>
+                                <option value="express">Express</option>
+                                <option value="international">International</option>
+                            </select>
+
+                            <p id="type-description" class="helper">Select the service that best fits your shipment.</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="size">Parcel size</label>
+                            <select id="size" required>
+                                <option value="" selected disabled>Select a size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                            </select>
+
+                            <p id="size-description" class="helper">Select the parcel's approximate dimensions.</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="weight">Weight</label>
+                            <div class="unit-input">
+                                <input id="weight" type="number" min="0.1" max="100" step="0.1" inputmode="decimal" placeholder="0.0" required>
+                                <span>kg</span>
+                            </div>
+
+                            <p class="helper">Enter a value between 0.1 and 100 kg.</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="distance">Delivery distance</label>
+                            <div class="unit-input">
+                                <input id="distance" type="number" min="1" max="20000" step="1" inputmode="decimal" placeholder="0" required>
+                                <span>km</span>
+                            </div>
+
+                            <p class="helper">Enter a value between 1 and 20,000 km.</p>
+                        </div>
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox">
+                            <input id="insurance" type="checkbox">
+                            <span>
+                                <strong>Add shipping insurance</strong>
+                                <small>Costs at least $1.50 or 2% of the shipment.</small>
+                            </span>
+                        </label>
+
+                        <label class="checkbox" id="same-day-container" hidden>
+                            <input id="same-day" type="checkbox" disabled>
+                            <span>
+                                <strong>Add same-day delivery</strong>
+                                <small>Available for express shipments for $7.50.</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <p id="form-message" class="form-message"></p>
+
+                    <div class="form-actions">
+                        <button class="calculate-btn" type="submit">Calculate Cost</button>
+                        <button class="reset-btn" id="reset-btn" type="button">Reset</button>
+                    </div>
+                </form>
+
+                <aside class="result-panel">
+                    <div id="empty-result" class="empty-result">
+                        <h2>Your estimate will appear here</h2>
+                        <p>Complete the shipment details to see the estimated delivery cost and price breakdown.</p>
+                    </div>
+
+                    <div id="result-content" hidden>
+                        <p class="result-label">Estimated shipping cost</p>
+                        <p id="total-price" class="total-price">$0.00</p>
+                        <div class="result-divider"></div>
+                        <h2>Price breakdown</h2>
+                        <dl id="price-breakdown"></dl>
+                    </div>
+                </aside>
+            </section>
+        </main>
     
-        <div class="row">
-            <div class="label-group">
-                <label for="type">Parcel Type</label>
-                <p class="helper">Select a delivery method.</p>
-            </div>
-
-            <select id="type">
-                <option value="Option">Select</option>
-                <option value="standard">Standard</option>
-                <option value="express">Express</option>
-                <option value="international">International</option>
-            </select>
-            <p id="typeDescription" class="description"></p>
-        </div>
-
-        <div class="row">
-            <div class="label-group">
-                <label for="weight"><br>Weight (kg)</label>
-                <p class="helper">Enter the parcel's weight in kilograms.</p>
-            </div>
-            <input id="weight" type="number">
-        </div>
-
-        <div class="row">
-            <div class="label-group">
-                <label for="distance"><br>Distance (km)</label>
-                <p class="helper">Enter the total delivery distance.</p>
-            </div>
-            <input id="distance" type="number">
-        </div>
-
-        <div class="row">
-            <div class="label-group">
-                <label for="size"><br>Size</label>
-                <p class="helper">Parcel size affects the shipping surcharge.</p>
-            </div>
-
-            <select id="size">
-                <option value="Option">Select</option>
-                <option value="S">Small</option>
-                <option value="M">Medium</option>
-                <option value="L">Large</option>
-            </select>
-            <p id="sizeDescription" class="description"></p>
-        </div>
-
-        <div class="row">
-            <div class="label-group">
-                <label for="insurance"><br>Insurance</label>
-                <p class="helper">Adds optional protection to the shipment.</p>
-            </div>
-            <input id="insurance" type="checkbox">
-        </div>
-
-        <div class="row" id="sameDayContainer">
-            <div class="label-group">
-                <label for="sameDayDel"><br>Same Day Delivery</label>
-                <p class="description">Optional same-day service for Express parcels.</p>
-            </div>
-            <input id="sameDayDel" type="checkbox">
-        </div>
-
-            <br><button id="btn1" onClick="calculateCost()">Calculate Cost</button>
-            <h2 id="result"></h2>
-            
         <script src="shipping-script.js"></script>
 
         <script>
-            document.getElementById("backbtn1").addEventListener("click", () => {
+            document.getElementById("backbtn").addEventListener("click", () => {
                 window.location.href = "../../../projects.html";
             });
         </script>

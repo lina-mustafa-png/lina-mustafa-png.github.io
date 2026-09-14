@@ -23,9 +23,12 @@ body {
     flex-direction: column;
     align-items: center;
     background: radial-gradient(circle at 50% 0%, rgb(255 250 241 / 45%), transparent 34rem), #f5ded8;
-    /* overflow: hidden;
-    background: #f5ded8;
-    color: #3e2921; */
+}
+
+.project-image {
+    width: 25vw;
+    height: 13vw;
+    margin-left: -2%;
 }
 
 .page-intro {

@@ -1,113 +1,199 @@
-document.getElementById("type").addEventListener("change", function () {
-        const sameDayContainer = document.getElementById("sameDayContainer");
-        const sameDay = document.getElementById("sameDayDel");
-        const description = document.getElementById("typeDescription");
+const form = document.getElementById("shipping-form");
 
-        if (this.value === "standard"){
-            description.textContent = "Lower-cost delivery with size-based pricing.";
-            sameDayContainer.style.display = "none";
-            sameDay.checked = false;
-        }
-        else if (this.value === "express"){
-            description.textContent = "Faster delivery with an express surcharge and optional same-day service.";
-            sameDayContainer.style.display = "grid";
-        } 
-        else if (this.value === "international"){
-            description.textContent = "International shipping with handling and customs fees.";
-            sameDayContainer.style.display = "none";
-            sameDay.checked = false;
-        }
-        else {
-            description.textContent = "Select a delivery method.";
-            sameDayContainer.style.display = "none";
-            sameDay.checked = false;
-        }
-    });
+const typeInput = document.getElementById("type");
+const sizeInput = document.getElementById("size");
+const weightInput = document.getElementById("weight");
+const distanceInput = document.getElementById("distance");
+const insuranceInput = document.getElementById("insurance");
+const sameDayInput = document.getElementById("same-day");
 
-document.getElementById("size").addEventListener("change", function () {
-    const sizeDescription = document.getElementById("sizeDescription");
+const typeDescription = document.getElementById("type-description");
+const sizeDescription = document.getElementById("size-description");
+const sameDayContainer = document.getElementById("same-day-container");
 
-    if (this.value === "S"){
-        sizeDescription.textContent = "Small: Up to 30 x 20 x 10 cm";
+const formMessage = document.getElementById("form-message");
+const emptyResult = document.getElementById("empty-result");
+const resultContent = document.getElementById("result-content");
+const totalPrice = document.getElementById("total-price");
+const priceBreakdown = document.getElementById("price-breakdown");
+
+const resetButton = document.getElementById("reset-btn");
+const backButton = document.getElementById("backbtn");
+
+const serviceDescriptions = {
+    standard:
+        "Economical delivery with regular processing times.",
+
+    express:
+        "Faster delivery with a 35% express surcharge.",
+
+    international:
+        "International delivery with handling and estimated customs fees."
+};
+
+const sizeInformation = {
+    S: {
+        description: "Small: up to 30 × 20 × 10 cm.",
+        surcharge: 0.75
+    },
+
+    M: {
+        description: "Medium: up to 50 × 40 × 30 cm.",
+        surcharge: 1.25
+    },
+
+    L: {
+        description: "Large: up to 80 × 60 × 50 cm.",
+        surcharge: 1.75
     }
-    else if (this.value === "M"){
-        sizeDescription.textContent = "Medium: Up to 50 x 40 x 30 cm";
-    }
-    else if (this.value === "L"){
-        sizeDescription.textContent = "Large: Up to 80 x 60 x 50 cm";
-    }
-    else {
-        sizeDescription.textContent = "";
+};
+
+const currency = new Intl.NumberFormat("en-CA", {
+    style: "currency",
+    currency: "CAD"
+}); 
+
+typeInput.addEventListener("change", () => {
+    const selectedType = typeInput.value;
+
+    typeDescription.textContent =
+        serviceDescriptions[selectedType] ??
+        "Select the service that best fits your shipment.";
+
+    const isExpress = selectedType === "express";
+
+    sameDayContainer.hidden = !isExpress;
+    sameDayInput.disabled = !isExpress;
+
+    if (!isExpress) {
+        sameDayInput.checked = false;
     }
 });
 
+sizeInput.addEventListener("change", () => {
+    const selectedSize = sizeInformation[sizeInput.value];
 
-function calculateCost(){
-    let weightInput = document.getElementById("weight").value;
-    let distanceInput = document.getElementById("distance").value;
-    let shippingType = document.getElementById("type").value;
-    let size = document.getElementById("size").value;
+    sizeDescription.textContent = selectedSize ? selectedSize.description : "Select the parcel's approximate dimensions.";
+});
 
-    let result = document.getElementById("result");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    formMessage.textContent = "";
 
-    if (weightInput === "" || distanceInput === "" || shippingType === "Option" || size === "Option") {
-        result.innerHTML = "Please complete all required fields.";
-        result.className = "error";
+    if (!form.checkValidity()) {
+        formMessage.textContent =
+            "Please complete all required shipment details.";
 
-        result.scrollIntoView({
-            behavior: "smooth", 
-            block:"center"
-        });
+        form.reportValidity();
+        return;
+    }
+    const shippingType = typeInput.value;
+    const parcelSize = sizeInput.value;
+    const weight = Number(weightInput.value);
+    const distance = Number(distanceInput.value);
+
+    if (weight <= 0 || distance <= 0) {
+        formMessage.textContent =
+            "Weight and distance must be greater than zero.";
         return;
     }
 
-    let weight = Number(weightInput);
-    let distance = Number(distanceInput);
-    let insurance = document.getElementById("insurance").checked;
+    const breakdown = [];
 
-    let cost = 3.50 + (weight * 1.20) + (distance * 0.05); // Base cost: weight + distance, with small base fee
+    const baseFee = 3.5;
+    const weightCharge = weight * 1.2;
+    const distanceCharge = distance * 0.05;
+    const sizeCharge = sizeInformation[parcelSize].surcharge;
 
-    if (weight <= 0 || distance <= 0){
-        result.textContent = "Weight and distance must be greater than zero.";
-        result.className = "error";
-        return;
-    }
+    breakdown.push(["Base fee", baseFee]);
+    breakdown.push(["Weight charge", weightCharge]);
+    breakdown.push(["Distance charge", distanceCharge]);
+    breakdown.push(["Size surcharge", sizeCharge]);
 
-    //Parcel.java
-    if(insurance){
-        cost += Math.max(1.50, 0.02 * cost); // compare $1.50 and 2% of the shipping cost then use whichever is hight multiplied by the base cost
-    }
+    let subtotal =
+        baseFee +
+        weightCharge +
+        distanceCharge +
+        sizeCharge;
 
-    //StandardParcel.java
-    if(shippingType === "standard" || shippingType === "express"){
-        if (size === "S"){
-            cost += 0.75;
-        }
-        if (size === "M"){
-            cost += 1.25;
-        }
-        if (size === "L"){
-            cost += 1.75;
-        }
-    }
+    if (shippingType === "express") {
+        const expressCharge = subtotal * 0.35;
 
-    //ExpressParcel.java
-    if(shippingType === "express"){
-        cost *= 1.35;
+        breakdown.push(["Express surcharge", expressCharge]);
+        subtotal += expressCharge;
 
-        if(document.getElementById("sameDayDel").checked){
-            cost += 7.50;
+        if (sameDayInput.checked) {
+            const sameDayCharge = 7.5;
+
+            breakdown.push(["Same-day delivery", sameDayCharge]);
+            subtotal += sameDayCharge;
         }
     }
 
-    //InternationalParcel.java
-    if(shippingType === "international"){
-        cost += 8.00;
-        cost += cost * 0.12;
+    if (shippingType === "international") {
+        const handlingFee = 8;
+        subtotal += handlingFee;
+
+        const customsEstimate = subtotal * 0.12;
+
+        breakdown.push(["International handling", handlingFee]);
+        breakdown.push(["Customs estimate", customsEstimate]);
+
+        subtotal += customsEstimate;
     }
 
-    result.innerHTML = "Shipping Cost: $" + cost.toFixed(2);
-    result.className = "";
+    if (insuranceInput.checked) {
+        const insuranceCharge = Math.max(1.5, subtotal * 0.02);
 
-    result.scrollIntoView({behavior: "smooth", block: "center"});
+        breakdown.push(["Shipping insurance", insuranceCharge]);
+        subtotal += insuranceCharge;
+    }
+
+    showResult(subtotal, breakdown);
+});
+
+function showResult(total, breakdown) {
+    totalPrice.textContent = currency.format(total);
+
+    priceBreakdown.innerHTML = breakdown
+        .map(([label, amount]) => {
+            return `
+                <div class="breakdown-row">
+                    <dt>${label}</dt>
+                    <dd>${currency.format(amount)}</dd>
+                </div>
+            `;
+        })
+        .join("");
+
+    emptyResult.hidden = true;
+    resultContent.hidden = false;
+
+    resultContent.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
 }
+
+resetButton.addEventListener("click", () => {
+    form.reset();
+
+    typeDescription.textContent =
+        "Select the service that best fits your shipment.";
+
+    sizeDescription.textContent =
+        "Select the parcel's approximate dimensions.";
+
+    sameDayContainer.hidden = true;
+    sameDayInput.disabled = true;
+
+    formMessage.textContent = "";
+    priceBreakdown.innerHTML = "";
+
+    emptyResult.hidden = false;
+    resultContent.hidden = true;
+});
+
+backButton.addEventListener("click", () => {
+    window.location.href = "../../../projects.html";
+});
