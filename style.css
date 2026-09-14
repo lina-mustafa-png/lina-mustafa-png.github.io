@@ -4,13 +4,13 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #fceded;
+    background-color: #ffeded;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #fceded;
+    background-color: #ffeded;
     /* color: #fceded; */
     font-family: "Andada Pro", serif;
     overflow-x: hidden;
@@ -250,7 +250,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F7E8DD;
+    background-color: #ffeded;
 }
 
 .menu-buttons {

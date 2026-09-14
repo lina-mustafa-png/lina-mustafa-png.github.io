@@ -4,22 +4,31 @@
     <!-- info about webpage -->
         <meta charset="UTF-8"/> <!-- describes the charcter system used -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- proper display on different screen sizes -->
-        <title>lina's portfolio</title>
+        <title>Lina's Projects</title>
         <link rel="stylesheet" href="projects.css"/>
         <link rel="icon" type="image/png" href="favicon.png">
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-
+    </head>
     <body>
         <button id="backbtn"> <img src="backbtn.png" width="20" height="20"></button>
 
-        <h1 class="header" style="text-align: center;">Projects</h1>
-        <div class="buttons">
-            <button id="btn1" style="text-align: center;">Python</button>
-            <button id="btn2" style="text-align: center;">HTML</button>
-            <button id="btn3" style="text-align: center;">Java</button>
-            <button id="btn4" style="text-align: center;">C/C++</button>
-        </div>
+        <main class="projects-page">
+            <header class="page-intro">
+                <h1 class="header" style="text-align: center;">Projects</h1>
+                <p class="subtitle" style="text-align: center;">A collection of my work using different languages and technologies.</p>
+            </header>
+
+            <div class="buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python" style="text-align: center;">Python</button>
+                <button class="filter-btn" data-filter="html" style="text-align: center;">HTML</button>
+                <button class="filter-btn" data-filter="java" style="text-align: center;">Java</button>
+                <button class="filter-btn" data-filter="cpp" style="text-align: center;">C/C++</button>
+            </div>
+
+            <section class="projects-grid"></section>
+        </main>
 
         <script src="projects.js"></script>
 
@@ -29,5 +38,4 @@
             };
         </script>
     </body>
-    </head>
 </html>
