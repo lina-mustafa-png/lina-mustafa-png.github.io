@@ -322,7 +322,7 @@ html, body {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
     html, body {
         background-color: #f5ded8;
     }
@@ -389,10 +389,6 @@ html, body {
     .caption {
         font-size: 1rem;
     }
-
-    /* .greeting {
-        top: -2%;
-    } */
 
     .content {
         padding: 0;
