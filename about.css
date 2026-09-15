@@ -429,21 +429,16 @@ html, body {
 }
 
 @media (min-width: 651px) and (max-width: 1366px) and (pointer: coarse) {
-    .about-page {
-        height: 100dvh;
-        min-height: 100dvh;
-        overflow: hidden;
-    }
+    .envelope.is-open .postcard {
+        position: fixed;
+        left: 50%;
+        top: 90%;
+        bottom: auto;
 
-    .stage {
-        flex: 1;
-        width: 100%;
-        min-height: 0;
-        margin-top: 0;
-    }
+        width: min(70vw, 720px);
+        max-width: min(70vw, 720px);
 
-    .envelope {
-        bottom: clamp(8rem, 18dvh, 14rem);
+        animation: postcard-center-tablet 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
     }
 }
 
@@ -477,5 +472,43 @@ html, body {
         opacity: 1;
         visibility: visible;
         transform: translate(-50%, -12%) scale(1);
+    }
+}
+
+@keyframes postcard-center-tablet {
+    0% {
+        z-index: 2;
+        top: 90%;
+        opacity: 0;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    10% {
+        z-index: 2;
+        top: 86%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    58% {
+        z-index: 2;
+        top: 48%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    59% {
+        z-index: 6;
+        top: 48%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        z-index: 6;
+        top: 53%;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
     }
 }
