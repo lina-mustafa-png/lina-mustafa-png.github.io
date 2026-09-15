@@ -368,6 +368,11 @@ button, input, select {
         font-size: 0.75rem;
     }
 
+    .project-image {
+        width: 5%;
+        height: 10%;
+    }
+
     .page-intro h1 {
         font-size: clamp(2.6rem, 13vw, 3.7rem);
         line-height: 1;
@@ -407,8 +412,7 @@ button, input, select {
         min-width: 0;
     }
 
-    .form-field input,
-    .form-field select {
+    .form-field input, .form-field select {
         width: 100%;
         min-width: 0;
         min-height: 48px;
@@ -441,14 +445,12 @@ button, input, select {
     .form-actions {
         width: 100%;
         margin-top: 0.75rem;
-
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         gap: 0.75rem;
     }
 
-    .calculate-btn,
-    .reset-btn {
+    .calculate-btn, .reset-btn {
         width: 100%;
         min-height: 48px;
     }
@@ -457,10 +459,8 @@ button, input, select {
         width: 100%;
         min-width: 0;
         padding: 1.25rem;
-
         border-top: 1px dashed #9cb9c2;
         border-left: 0;
-
         scroll-margin-top: 1rem;
     }
 
@@ -477,12 +477,6 @@ button, input, select {
         max-width: 300px;
         margin-right: auto;
         margin-left: auto;
-    }
-
-    .parcel-icon {
-        width: 52px;
-        height: 52px;
-        margin-bottom: 1rem;
     }
 
     .total-price {
