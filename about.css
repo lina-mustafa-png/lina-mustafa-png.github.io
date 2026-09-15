@@ -428,6 +428,20 @@ html, body {
     }
 }
 
+@media (min-width: 651px) and (max-width: 1366px)
+       and (pointer: coarse) and (orientation: portrait) {
+    .envelope {
+        bottom: 18dvh;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 1366px)
+       and (pointer: coarse) and (orientation: landscape) {
+    .envelope {
+        bottom: 13dvh;
+    }
+}
+
 @keyframes postcard-out-mobile {
     0% {
         z-index: 2;
