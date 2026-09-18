@@ -166,7 +166,6 @@ body {
         width: 100%;
         max-width: 500px;
         margin: 2rem auto 0;
-
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
@@ -174,5 +173,14 @@ body {
 
     .project-card {
         width: 100%;
+    }
+
+    .project-image {
+        display: block;
+        width: min(100%, 500px);
+        max-width: none;
+        height: auto;
+        margin: 0 auto 1rem;
+        object-fit: contain;
     }
 }
