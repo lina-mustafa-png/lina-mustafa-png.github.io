@@ -42,8 +42,6 @@ const purchaseMessage = document.getElementById("purchase-message");
 // buttons
 const buyButton = document.getElementById("buy-btn");
 const redeemButton = document.getElementById("redeem-btn");
-// const logoutButtons = document.querySelectorAll(".logout-btn");
-// const resetButton = document.getElementById("reset-demo");
 
 // event listeners
 loginForm.addEventListener("submit", login);
@@ -56,14 +54,6 @@ customerForm.addEventListener("submit", addCustomer);
 
 buyButton.addEventListener("click", buyBooks);
 redeemButton.addEventListener("click", redeemPointsAndBuy);
-
-// for (let i = 0; i < logoutButtons.length; i++) {
-//     logoutButtons[i].addEventListener("click", logout);
-// }
-
-// if (resetButton !== null) {
-//     resetButton.addEventListener("click", resetDemo);
-// }
 
 // demo account buttons
 function selectOwnerAccount() {

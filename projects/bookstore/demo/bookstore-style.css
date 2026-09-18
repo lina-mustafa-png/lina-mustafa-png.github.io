@@ -179,6 +179,15 @@ input:focus {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
+.description {
+    max-width: 650px;
+    margin: 0.5rem 0 0;
+    color: #795548;
+    font-family: "Andada Pro", serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .owner-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -394,4 +403,240 @@ th {
 #backbtn:focus-visible {
     outline: 3px solid #a45c6d;
     outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .bookstore-page {
+        width: 100%;
+        min-height: 100svh;
+        height: auto;
+        padding: 5rem 1rem 2rem;
+        overflow: visible;
+    }
+
+    #backbtn {
+        top: 1rem;
+        left: 1rem;
+        width: 42px;
+        height: 42px;
+        padding: 9px;
+    }
+
+    .page-intro {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .page-intro h1 {
+        font-size: clamp(2.3rem, 11vw, 3.5rem);
+        line-height: 1;
+    }
+
+    .page-intro p {
+        max-width: 100%;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .app-window {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .view {
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+
+    .login-panel {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+        border-radius: 14px;
+    }
+
+    .login-panel h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .login-panel input {
+        width: 100%;
+        min-width: 0;
+        font-size: 16px;
+    }
+
+    .sign-btn {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .demo-logins {
+        text-align: center;
+    }
+
+    .demo-logins button {
+        display: block;
+        width: 100%;
+        margin: 0.6rem 0 0;
+        padding: 0.8rem;
+    }
+
+    .dashboard-header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .dashboard-header h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1.05;
+    }
+
+    .dashboard-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .dashboard-header .logout-btn {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    .owner-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .management-panel {
+        width: 100%;
+        min-width: 0;
+        padding: 1rem;
+    }
+
+    .management-panel h3 {
+        font-size: clamp(1.7rem, 8vw, 2.2rem);
+    }
+
+    .inline-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+
+    .inline-form input, .inline-form button {
+        width: 100%;
+        min-width: 0;
+        min-height: 46px;
+        margin: 0;
+    }
+
+    .inline-form input {
+        font-size: 16px;
+    }
+
+    .table-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-container table {
+        width: 100%;
+        min-width: 480px;
+    }
+
+    .table-container th, .table-container td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .delete-btn {
+        min-height: 38px;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .rewards-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .rewards-card strong {
+        display: block;
+        font-size: clamp(1.7rem, 8vw, 2.3rem);
+    }
+
+    .shopping-panel {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .section-heading h3 {
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.9rem;
+    }
+
+    .book-option {
+        width: 100%;
+        min-height: 80px;
+        padding: 1rem;
+    }
+
+    .book-option input {
+        flex-shrink: 0;
+    }
+
+    .purchase-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .purchase-actions button {
+        width: 100%;
+        min-height: 48px;
+        margin: 0;
+    }
+
+    .reset-demo {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 1.5rem auto 0;
+        min-height: 46px;
+    }
+
+    .demo-note {
+        width: 100%;
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        text-align: center;
+    }
 }

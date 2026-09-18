@@ -32,7 +32,7 @@
                         <label for="password">Password</label>
                         <input id="password" type="password" autocomplete="current-password" readonly required>
                         <p id="login-message" class="message"></p>
-                        <button class="sign-btn" type="submit">Sign In</button>
+                        <button id="sign-in-btn" class="sign-btn" type="submit" disabled>Sign In</button>
                     </form>
 
                     <div class="demo-logins">
@@ -49,9 +49,10 @@
                     <div>
                         <span class="dashboard-label">Owner dashboard</span>
                         <h2>Bookstore Administration</h2>
+                        <p class="description">Manage the bookstore's inventory and customer accounts. You can add or remove books, create customer accounts, and review customer points and membership levels.</p>
                     </div>
 
-                    <button class="secondary-btn logout-btn" type="button">Log Out</button>
+                    <button class="secondary-btn logout-btn" type="button" onclick="logout()">Log Out</button>
                 </div>
                 <div class="owner-grid">
                     <section class="management-panel">
@@ -111,6 +112,7 @@
                     <div>
                         <span class="dashboard-label">Customer dashboard</span>
                         <h2 id="customer-welcome">Welcome</h2>
+                        <p class="description">Browse the available books, make purchases, earn loyalty points, and redeem your points for discounts.</p>
                     </div>
                     <button class="secondary-btn logout-btn" type="button" onclick="logout()">Log Out</button>
                 </div>
@@ -148,7 +150,7 @@
 
         <button id="reset-demo" class="reset-demo" type="button" onclick="resetDemo()">Reset demo data</button>
 
-        <p class="demo-note">This browser demo uses temporary sample. The original project was developed in Java Swing.</p>
+        <p class="demo-note">This browser demo uses temporary sample data. The original project was developed using Java Swing.</p>
     </main>
     
     <script src="bookstore-script.js"></script>
