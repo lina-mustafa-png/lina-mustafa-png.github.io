@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background: #f5ded8;
+    color: #3e2921;
+    font-family: "Andada Pro", serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+.bookstore-page {
+    width: min(1180px, 92%);
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: clamp(5rem, 8vh, 7rem) 0 3rem;
+}
+
+.page-intro {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.project-label,
+.dashboard-label {
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.page-intro h1 {
+    margin: 0.5rem 0 0;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+}
+
+.page-intro p {
+    color: #795548;
+    line-height: 1.7;
+}
+
+.sign-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.demo-instructions {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #795548;
+}
+
+.app-window {
+    overflow: hidden;
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgb(62 41 33 / 16%);
+}
+
+.view {
+    padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+#login-view {
+    min-height: 500px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(115deg,rgb(255 250 241 / 92%),rgb(220 236 241 / 85%)); 
+}
+
+.login-panel {
+    width: min(100%, 420px);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgb(62 41 33 / 13%);
+}
+
+.login-panel h2, .dashboard-header h2, .management-panel h3, .shopping-panel h3 {
+    margin: 0;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+}
+
+.login-panel h2 {
+    font-size: 2.2rem;
+}
+
+.login-panel > p {
+    margin: 0.3rem 0 1.5rem;
+    color: #795548;
+}
+
+#login-form {
+    display: grid;
+    gap: 0.65rem;
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    padding: 0.7rem 0.85rem;
+    color: #3e2921;
+    background: white;
+    border: 1px solid #ccb9aa;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a45c6d;
+    box-shadow: 0 0 0 3px rgb(164 92 109 / 15%);
+}
+
+.message {
+    min-height: 1.4em;
+    margin: 0;
+    color: #a33d48;
+    font-size: 0.82rem;
+}
+
+.demo-logins {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    border-top: 1px dashed #c08d7e;
+}
+
+.demo-logins p {
+    width: 100%;
+    margin: 0;
+    color: #795548;
+    font-size: 0.8rem;
+}
+
+.demo-logins button {
+    padding: 0;
+    color: #a45c6d;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dashboard-header h2 {
+    margin-top: 0.25rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.owner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.management-panel, .shopping-panel {
+    padding: 1.4rem;
+    background: white;
+    border: 1px solid #ead2c9;
+    border-radius: 10px;
+}
+
+.management-panel h3, .shopping-panel h3 {
+    font-size: 1.55rem;
+}
+
+.inline-form {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 120px auto;
+    gap: 0.6rem;
+}
+
+.table-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #eadbd5;
+}
+
+th {
+    color: #795548;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.rewards-card {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    display: flex;
+    gap: 3rem;
+    background: #dcecf1;
+    border: 1px solid #aac3cb;
+    border-radius: 10px;
+}
+
+.rewards-card div {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.rewards-card span {
+    color: #795548;
+    font-size: 0.8rem;
+}
+
+.rewards-card strong {
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1.7rem;
+}
+
+.section-heading p {
+    margin: 0.25rem 0 0;
+    color: #795548;
+    font-size: 0.85rem;
+}
+
+.book-grid {
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: 0.8rem;
+}
+
+.book-option {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fffaf1;
+    border: 1px solid #ead2c9;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.book-option input {
+    width: 18px;
+    min-height: 18px;
+    margin: 0.2rem 0 0;
+    accent-color: #a45c6d;
+}
+
+.book-option span {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.book-option small {
+    color: #795548;
+}
+
+.purchase-message {
+    min-height: 1.5em;
+    color: #52745d;
+}
+
+.purchase-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.main-btn,
+.secondary-btn {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.main-btn {
+    color: white;
+    background: #a45c6d;
+    border: 1px solid #a45c6d;
+}
+
+.secondary-btn {
+    color: #5a382d;
+    background: transparent;
+    border: 1px solid #c08d7e;
+}
+
+.main-btn:hover, .secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgb(62 41 33 / 13%);
+}
+
+.reset-demo {
+    margin: 1.5rem auto 0;
+    display: block;
+    color: #795548;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.demo-note {
+    max-width: 650px;
+    margin: 0.8rem auto 0;
+    color: #795548;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+#backbtn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    background-color: #f7e5d9;
+    box-shadow: 0 7px 16px rgb(62 41 33 / 25%);
+    transform: rotate(0deg) translateY(-2px);
+}
+
+#backbtn:active {
+    transform: rotate(0deg) translateY(1px);
+    box-shadow: 0 3px 7px rgb(62 41 33 / 18%);
+}
+
+#backbtn:focus-visible {
+    outline: 3px solid #a45c6d;
+    outline-offset: 3px;
+}
