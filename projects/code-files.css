@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #f5ded8;
+    color: #3e2921;
+    font-family: "Andada Pro", serif;
+}
+
+.code-page {
+    width: min(92%, 1050px);
+    margin: 0 auto;
+    padding: clamp(5rem, 10vw, 8rem) 0 4rem;
+}
+
+.header {
+    max-width: 790px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.project-label {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1;
+}
+
+.header p {
+    margin: 1.25rem auto 0;
+    color: #795548;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.files-panel {
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 14px;
+    box-shadow: 0 16px 35px rgb(62 41 33 / 14%);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed #c08d7e;
+}
+
+.section-heading > div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.section {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: #fffaf1;
+    background: #a45c6d;
+    border-radius: 50%;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+}
+
+.file-count {
+    color: #8b5e4a;
+    font-size: 0.9rem;
+}
+
+.file-list {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.file-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    color: #3e2921;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #ead1c8;
+    border-radius: 9px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-card:hover {
+    transform: translateY(-3px);
+    border-color: #a45c6d;
+    box-shadow: 0 8px 18px rgb(62 41 33 / 12%);
+}
+
+.file-icon {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    color: #fffaf1;
+    background: #a45c6d;
+    border-radius: 7px;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.file-info {
+    min-width: 0;
+}
+
+.file-info strong {
+    display: block;
+    color: #5a382d;
+    overflow-wrap: anywhere;
+}
+
+.file-info small {
+    display: block;
+    margin-top: 0.3rem;
+    color: #8b6a5e;
+    line-height: 1.4;
+}
+
+.arrow {
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.note {
+    margin: 1.5rem auto 0;
+    color: #795548;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition: transform 0.2s ease;
+}
+
+#backbtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    transform: rotate(0deg) translateY(-2px);
+}
+
+@media (max-width: 650px) {
+    .code-page {
+        width: min(92%, 520px);
+        padding-top: 5.5rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .header h1 {
+        font-size: clamp(2.7rem, 13vw, 4rem);
+    }
+
+    .files-panel {
+        padding: 1rem;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .file-count {
+        display: none;
+    }
+
+    .file-card {
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: 0.9rem;
+    }
+
+    .file-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 0.75rem;
+    }
+
+    .arrow {
+        grid-column: 2;
+        margin-top: 0.25rem;
+    }
+
+    #backbtn {
+        width: 42px;
+        height: 42px;
+    }
+}

@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>coming soon!</h1>
-    
+    <button id="backbtn"> <img src="images/backbtn.png" width="20" height="20"></button>
+
+    <main class="contact-page">
+        <header class="header">
+            <span class="page-label">Get in Touch</span>
+            <h1>Contact</h1>
+            <p>I'm always happy to connect, learn from others, and hear about new opportunities and ideas!</p>
+        </header>
+
+        <section class="contact-card">
+            <div class="contact-intro">
+                <span class="label">Let's connect!</span>
+                <p>I'm always interested in learning about new projects, software devlopment opportunities, and creative idess. Feel free to reach out through any of the platforms below.</p>
+            </div>
+
+            <nav class="contact-links">
+                <button class="contact-link" id="copy-email" type="button" data-email="lina9.mustafa90@gmail.com">
+                    <span class="contact-icon">@</span>
+                    <span class="contact-details">
+                        <span>Email</span>
+                        <strong>lina9.mustafa90@gmail.com</strong>
+                    </span>
+                    <span class="arrow">↗</span>
+                </button>
+                <div id="copy-notif" role="status">
+                    Email copied to clipboard!
+                </div>
+
+
+                <a class="contact-link" href="https://www.linkedin.com/in/lina-mustafa-66b75539a/" target="_blank" rel="noopener">
+                    <span class="contact-icon linkedin">in</span>
+                    <span class="contact-details">
+                        <small>Linkedin</small>
+                        <strong>Connect with me</strong>
+                    </span>
+                    <span class="arrow">↗</span>
+                </a>
+
+                <a class="contact-link" href="https://github.com/lina-mustafa-png/" target="_blank" rel="noopener">
+                    <span class="contact-icon">&lt;/&gt;</span>
+                    <span class="contact-details">
+                        <small>GitHub</small>
+                        <strong>lina-mustafa-png</strong>
+                    </span>
+                    <span class="arrow">↗</span>
+                </a>
+            </nav>
+
+            <div class="postmark">
+                <span>TORONTO</span>
+                <span>CANADA</span>
+                <span class="plane">✈</span>
+            </div>
+        </section>
+
+        <p class="note">Looking forward to hearing from you!</p>
+    </main>
+
+    <script>
+        const copyEmailButton = document.getElementById("copy-email");
+        const copyNotification = document.getElementById("copy-notif");
+
+        copyEmailButton.addEventListener("click", async function () {
+            const email = copyEmailButton.dataset.email;
+
+            try {
+                await navigator.clipboard.writeText(email);
+                copyNotification.classList.add("show");
+
+                setTimeout(function () {
+                    copyNotification.classList.remove("show");
+                }, 2500);
+            } catch {
+                copyNotification.textContent = "Unable to copy. Email: " + email;
+                copyNotification.classList.add("show");
+            }
+        });
+    </script>
+    <script>
+        document.getElementById("backbtn").onclick = function () {
+            window.location.href = "index.html#menu";
+        };
+    </script>
 </body>
 </html>

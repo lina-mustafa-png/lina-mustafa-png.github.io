@@ -1,0 +1,401 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #ffeded;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at top left, rgb(255 250 241 / 55%), transparent 35%), #ffeded;
+    color: #3e2921;
+    font-family: "Andada Pro", serif;
+}
+
+.contact-page {
+    width: min(1050px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: clamp(4.5rem, 7vw, 6rem) 0 3rem;
+}
+
+.header {
+    width: min(760px, 100%);
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.page-label {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0 0 0.65rem;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.header p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.contact-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: clamp(2rem, 5vw, 4rem);
+    overflow: hidden;
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 12px;
+    box-shadow: 0 18px 45px rgb(62 41 33 / 16%);
+}
+
+.contact-intro, .contact-links {
+    position: relative;
+    z-index: 2;
+}
+
+.label {
+    color: #a45c6d;
+    font-family: "Pinyon Script", cursive;
+    font-size: 1.8rem;
+}
+
+.contact-intro h2 {
+    margin: 0.3rem 0 1rem;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+}
+
+.contact-intro p {
+    margin: 0;
+    line-height: 1.75;
+}
+
+.contact-links {
+    align-self: center;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.contact-link {
+    min-width: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    color: #3e2921;
+    background: rgb(245 222 216 / 45%);
+    border: 1px solid rgb(192 141 126 / 60%);
+    border-radius: 9px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-link:hover {
+    background: #f7e5d9;
+    box-shadow: 0 8px 18px rgb(62 41 33 / 13%);
+    transform: translateX(5px);
+}
+
+.contact-link:focus-visible {
+    outline: 3px solid #a45c6d;
+    outline-offset: 3px;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: #fffaf1;
+    background: #a45c6d;
+    border-radius: 50%;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.linkedin {
+    font-size: 1.05rem;
+}
+
+.contact-details {
+    min-width: 0;
+}
+
+.contact-details small, .contact-details strong {
+    display: block;
+}
+
+.contact-details small {
+    margin-bottom: 0.15rem;
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contact-details strong {
+    overflow: hidden;
+    color: #5a382d;
+    font-size: 0.95rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.arrow {
+    color: #a45c6d;
+    font-size: 1.2rem;
+}
+
+.postmark {
+    position: absolute;
+    right: -18px;
+    bottom: -20px;
+    width: 105px;
+    height: 105px;
+    display: grid;
+    place-content: center;
+    color: rgb(164 92 109 / 28%);
+    border: 3px double rgb(164 92 109 / 25%);
+    border-radius: 50%;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-align: center;
+    transform: rotate(-12deg);
+}
+
+.postmark span {
+    display: block;
+}
+
+.plane {
+    font-size: 1.1rem;
+}
+
+.note {
+    margin: 1.5rem 0 0;
+    color: #5a382d;
+    font-family: "Pinyon Script", cursive;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+button.contact-link {
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+#copy-notif {
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    z-index: 100;
+    padding: 0.8rem 1.2rem;
+    color: #fffaf1;
+    background: #5a382d;
+    border: 1px solid #c08d7e;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgb(62 41 33 / 22%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 1rem);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#copy-notif.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#backbtn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    background-color: #f7e5d9;
+    box-shadow: 0 7px 16px rgb(62 41 33 / 25%);
+    transform: rotate(0deg) translateY(-2px);
+}
+
+#backbtn:active {
+    transform: rotate(0deg) translateY(1px);
+    box-shadow: 0 3px 7px rgb(62 41 33 / 18%);
+}
+
+#backbtn:focus-visible {
+    outline: 3px solid #a45c6d;
+    outline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+    body {
+        min-height: 100svh;
+    }
+
+    .contact-page {
+        width: calc(100% - 1rem);
+        padding: 4.75rem 0 2rem;
+    }
+
+    .header {
+        width: 100%;
+        margin-bottom: 1.25rem;
+        padding: 0 0.5rem;
+    }
+
+    .page-label {
+        margin-bottom: 0.2rem;
+        font-size: 0.82rem;
+    }
+
+    .header h1 {
+        margin-bottom: 0.5rem;
+        font-size: clamp(3.2rem, 16vw, 4.3rem);
+    }
+
+    .header p {
+        max-width: 500px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.25rem;
+        background: #fffaf1;
+        border-radius: 10px;
+    }
+
+    .contact-intro {
+        text-align: center;
+    }
+
+    .label {
+        font-size: 1.55rem;
+    }
+
+    .contact-intro h2 {
+        margin: 0.2rem 0 0.75rem;
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
+
+    .contact-intro p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .contact-links {
+        gap: 0.7rem;
+    }
+
+    .contact-link {
+        grid-template-columns: 40px minmax(0, 1fr) auto;
+        gap: 0.7rem;
+        padding: 0.8rem;
+    }
+
+    .contact-link:hover {
+        transform: translateY(-2px);
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.78rem;
+    }
+
+    .linkedin {
+        font-size: 1rem;
+    }
+
+    .contact-details small {
+        font-size: 0.72rem;
+    }
+
+    .contact-details strong {
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .arrow {
+        font-size: 1rem;
+    }
+
+    .postmark {
+        right: -15px;
+        bottom: -15px;
+        width: 80px;
+        height: 80px;
+        font-size: 0.55rem;
+        opacity: 0.5;
+    }
+
+    .plane {
+        font-size: 0.85rem;
+    }
+
+    .note {
+        margin-top: 1rem;
+        font-size: 1.4rem;
+    }
+
+    #copy-notif {
+        bottom: 1rem;
+        width: max-content;
+        max-width: calc(100% - 2rem);
+        text-align: center;
+    }
+}

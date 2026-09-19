@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f5ded8;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f5ded8;
+    color: #3e2921;
+    font-family: "Andada Pro", serif;
+}
+
+#backbtn {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    display: grid;
+    place-items: center;
+    background: #fffaf1;
+    border: 2px dashed #b98070;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    cursor: pointer;
+    transform: rotate(-4deg);
+    transition: transform 0.2s ease;
+}
+
+#backbtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#backbtn:hover {
+    transform: rotate(0deg) translateY(-2px);
+}
+
+.schematic-page {
+    width: calc(100% - 1rem);
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.project-intro {
+    width: min(850px, 100%);
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.project-label {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    color: #a45c6d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.project-intro h1 {
+    margin: 0 0 1rem;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 0.95;
+}
+
+.project-intro p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    line-height: 1.5;
+}
+
+.viewer-card {
+    width: min(1100px, 100%);
+    margin: 1.25rem auto;
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgb(62 41 33 / 16%);
+    overflow: hidden;
+}
+
+.viewer-toolbar {
+    min-height: 64px;
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fffaf1;
+    border-bottom: 1px solid rgb(192 141 126 / 45%);
+}
+
+.viewer-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.viewer-controls button {
+    min-width: 42px;
+    height: 38px;
+    padding: 0 0.8rem;
+    color: #5a382d;
+    background: #fceded;
+    border: 1px solid #c08d7e;
+    border-radius: 6px;
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.viewer-controls button:hover {
+    color: white;
+    background: #a45c6d;
+    transform: translateY(-1px);
+}
+
+.schematic-viewport {
+    position: relative;
+    height: min(72vh, 760px);
+    min-height: 500px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle, rgb(90 56 45 / 8%) 1px, transparent 1px),
+        #f4efe8;
+    background-size: 20px 20px;
+    cursor: grab;
+    touch-action: none;
+}
+
+.schematic-viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.schematic-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    user-select: none;
+}
+
+.schematic-canvas > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    border: 1px solid rgb(90 56 45 / 20%);
+    box-shadow: 0 8px 25px rgb(62 41 33 / 12%);
+    pointer-events: none;
+    user-select: none;
+    transform: translate(3%, -6%) scale(1.2);
+}
+
+@media (max-width: 650px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .schematic-page {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 5rem 0.75rem 2rem;
+    }
+
+    .project-intro {
+        margin-bottom: 1.25rem;
+    }
+
+    .project-intro h1 {
+        font-size: clamp(2.5rem, 13vw, 3.8rem);
+        line-height: 1;
+    }
+
+    .viewer-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 1.25rem auto 0;
+    }
+
+    .viewer-toolbar {
+        min-height: 58px;
+        padding: 0.6rem;
+    }
+
+    .viewer-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .viewer-controls button {
+        height: 36px;
+    }
+
+    .schematic-viewport {
+        height: 60svh;
+        min-height: 380px;
+    }
+
+    .schematic-canvas {
+        top: 60%;
+        left: 50%;
+        width: calc(100% - 0.75rem);
+        height: calc(100% - 0.75rem);
+    }
+
+    .schematic-canvas > img {
+        object-position: center;
+        transform: scale(1.30);
+    }
+}

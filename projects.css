@@ -161,6 +161,46 @@ body {
     outline-offset: 3px;
 }
 
+.schematic-page {
+    min-height: 100vh;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background: #fceded;
+    color: #3e2921;
+}
+
+.schematic-page header {
+    width: min(1100px, 100%);
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.schematic-page h1 {
+    margin: 0.5rem 0;
+    color: #5a382d;
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.viewer-card {
+    width: min(1200px, 100%);
+    margin: auto;
+    padding: 0.75rem;
+    background: #fffaf1;
+    border: 1px solid #c08d7e;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgb(62 41 33 / 18%);
+    overflow: hidden;
+}
+
+kicanvas-embed {
+    display: block;
+    width: 100%;
+    height: min(75vh, 800px);
+    min-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 @media (max-width: 650px) {
     .projects-grid {
         width: 100%;
@@ -182,5 +222,14 @@ body {
         height: auto;
         margin: 0 auto 1rem;
         object-fit: contain;
+    }
+
+    .schematic-page {
+        padding: 1rem;
+    }
+
+    kicanvas-embed {
+        height: 65svh;
+        min-height: 420px;
     }
 }

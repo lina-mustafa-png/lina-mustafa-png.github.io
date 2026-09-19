@@ -4,25 +4,81 @@
         <meta charset="UTF-8"/> <!-- describes the charcter system used -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- proper display on different screen sizes -->
         <title>code files</title>
-        <link rel="stylesheet" href="project-files.css"/>
-        <link rel="icon" type="image/png" href="../../../favicon.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../code-files.css"/>
+        <link rel="icon" type="image/png" href="../../../images/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&display=swap" rel="stylesheet">
+
     </head>
     <body>
-        <h1>Shipping Cost Calculator - Code Files</h1>
-        <button id="backbtn"> <img src="../../../backbtn.png" width="20" height="20"></button>
+        <button id="backbtn"> <img src="../../../images/backbtn.png" width="20" height="20"></button>
 
-        <a href="ExpressParcel.java" id="file1"><br>ExpressParcel.java</a>
-        <a href="InternationalParcel.java" id="file2"><br>InternationalParcel.java</a>
-        <a href="Main.java" id="file3"><br>Main.java</a>
-        <a href="Parcel.java" id="file4"><br>Parcel.java</a>
-        <a href="StandardParcel.java" id="file5"><br>StandardParcel.java</a>
+        <main class="code-page">
+            <header class="header">
+                <span class="project-label">Java Project</span>
+                <h1>Shipping Cost Calculator</h1>
+                <p>Explore the original Java source files used to make the shipping calculator.</p>
+            </header>
 
+            <section class="files-panel">
+                <div class="section-heading">
+                    <div>
+                        <span class="section">01</span>
+                        <h2>Project Files</h2>
+                    </div>
+                    <span class="file-count">5 files</span>
+                </div>
+
+                <div class="file-list">
+                    <a class="file-card" href="ExpressParcel.java">
+                        <span class="file-icon">JAVA</span>
+                        <span class="file-info">
+                            <strong>ExpressParcel.java</strong>
+                            <small>Express delivery pricing and options.</small>
+                        </span>
+                        <span class="arrow">View →</span>
+                    </a>
+
+                    <a class="file-card" href="InternationalParcel.java">
+                        <span class="file-icon">JAVA</span>
+                        <span class="file-info">
+                            <strong>InternationalParcel.java</strong>
+                            <small>International fees and customs charges.</small>
+                        </span>
+                        <span class="arrow">View →</span>
+                    </a>
+
+                    <a class="file-card" href="Main.java">
+                        <span class="file-icon">JAVA</span>
+                        <span class="file-info">
+                            <strong>Main.java</strong>
+                            <small>Application entry point.</small>
+                        </span>
+                        <span class="arrow">View →</span>
+                    </a>
+
+                    <a class="file-card" href="Parcel.java">
+                        <span class="file-icon">JAVA</span>
+                        <span class="file-info">
+                            <strong>Parcel.java</strong>
+                            <small>Base parcel class and shared calculations.</small>
+                        </span>
+                        <span class="arrow">View →</span>
+                    </a>
+
+                    <a class="file-card" href="StandardParcel.java">
+                        <span class="file-icon">JAVA</span>
+                        <span class="file-info">
+                            <strong>StandardParcel.java</strong>
+                            <small>Standard delivery pricing.</small>
+                        </span>
+                        <span class="arrow">View →</span>
+                    </a>
+                </div>
+
+                <p class="note">These files contain the original Java implementation. View the browser demo to interact with the project.</p>
+            </section>
+        </main>
+        
         <script>
             document.getElementById("backbtn").onclick = function () {
                 window.location.href = "../../../projects.html";

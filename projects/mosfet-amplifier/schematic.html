@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive MOSFET Amplifier Schematic</title>
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+    <link rel="stylesheet" href="schematic-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Andada+Pro:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="backbtn" type="button"><img src="../../images/backbtn.png"></button>
+
+    <main class="schematic-page">
+        <header class="project-intro">
+            <span class="project-label">KiCad Project</span>
+            <h1>Multi-Stage MOSFET Amplifier</h1>
+            <p>Drag to pan and scoll to zoom.</p>
+        </header>
+
+        <section class="viewer-card">
+
+            <div class="viewer-toolbar">
+                <div class="viewer-controls">
+                    <button id="zoom-out" type="button">−</button>
+                    <button id="reset-view" type="button">Reset</button>
+                    <button id="zoom-in" type="button">+</button>
+                </div>
+            </div>
+
+            <div class="schematic-viewport" id="schematic-viewport">
+                <div class="schematic-canvas" id="schematic-canvas">
+                    <img src="./ele404project.svg">
+                </div>
+            </div>
+    </section>
+</main>
+
+    <script>
+        document.getElementById("backbtn").addEventListener("click", () => {
+            window.location.href = "../../projects.html";
+        });
+    </script>
+
+    <script src="schematic-viewer.js"></script>
+</body>
+</html>
