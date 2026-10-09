@@ -492,7 +492,7 @@ html, body {
 
     55% {
         z-index: 2;
-        transform: translate3d(-50%, -34%, 0) scale(0.99);
+        transform: translate3d(-50%, -32%, 0) scale(0.99);
     }
 
     56% {
@@ -500,7 +500,7 @@ html, body {
     }
 
     82% {
-        transform: translate3d(-50%, -32%, 0) scale(1);
+        transform: translate3d(-50%, -31%, 0) scale(1);
     }
 
     100% {
