@@ -483,24 +483,20 @@ html, body {
         z-index: 2;
         opacity: 0;
         visibility: visible;
-        transform: translate3d(-50%, 25%, 0) scale(0.96);
+        transform: translate3d(-50%, 25%, 0) scale(0.97);
     }
 
-    15% {
+    12% {
         opacity: 1;
     }
 
-    55% {
+    42% {
         z-index: 2;
-        transform: translate3d(-50%, -32%, 0) scale(0.99);
+        transform: translate3d(-50%, -8%, 0) scale(0.99);
     }
 
-    56% {
+    43% {
         z-index: 6;
-    }
-
-    82% {
-        transform: translate3d(-50%, -31%, 0) scale(1);
     }
 
     100% {
