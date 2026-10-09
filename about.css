@@ -434,7 +434,7 @@ html, body {
         right: auto;
         top: auto;
         bottom: 7%;
-        animation: postcard-out-mobile 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+        animation: postcard-out-mobile 1.8s cubic-bezier(0.22, 0.8, 0.3, 1) 0.5s forwards;
     }
 
     #backbtn {
@@ -490,13 +490,21 @@ html, body {
         opacity: 1;
     }
 
-    42% {
+    60% {
         z-index: 2;
-        transform: translate3d(-50%, -8%, 0) scale(0.99);
+        transform: translate3d(-50%, -34%, 0) scale(1);
     }
 
-    43% {
+    61% {
         z-index: 6;
+    }
+
+    80% {
+        transform: translate3d(-50%, -28%, 0) scale(1);
+    }
+
+    92% {
+        transform: translate3d(-50%, -30.8%, 0) scale(1);
     }
 
     100% {
