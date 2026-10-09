@@ -382,10 +382,12 @@ html, body {
         gap: 0.8rem;
         overflow: hidden;
         transform: translate(-50%, 30%) scale(0.96);
-        will-change: transform, opacity;
-        backface-visibility: hidden;
     }
 
+    .photo-area {
+        flex-shrink: 0;
+        gap: 0.3rem;
+    }
 
     .photo {
         width: min(45%, 140px);
@@ -426,7 +428,7 @@ html, body {
         right: auto;
         top: auto;
         bottom: 7%;
-        animation: postcard-out-mobile 1.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+        animation: postcard-out-mobile 1.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
     }
 
     #backbtn {
