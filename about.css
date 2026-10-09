@@ -373,22 +373,43 @@ html, body {
         bottom: 7%;
         width: 100%;
         max-width: 100%;
-        height: min(62svh, 520px);
-        padding: 0.9rem;
+        /* height: min(62svh, 520px); */
+        height: auto;
+        min-height: 0;
+        /* padding: 0.9rem; */
+        padding: 1rem 0.9rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        grid-template-columns: 1fr;
         gap: 0.8rem;
         overflow: hidden;
         transform: translate(-50%, 30%) scale(0.96);
+        will-change: transform, opacity;
+        backface-visibility: hidden;
     }
 
-    .photo {
+    /* .photo {
         width: min(45%, 140px);
         height: clamp(110px, 17svh, 145px);
         margin: 0 auto;
+    } */
+
+    .photo {
+        width: 140px;
+        height: auto;
+        max-width: 45%;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    .photo-area {
+        width: 100%;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
     }
 
     .caption {
