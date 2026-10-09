@@ -446,38 +446,6 @@ html, body {
     }
 }
 
-/* @keyframes postcard-out-mobile {
-    0% {
-        z-index: 2;
-        opacity: 0;
-        visibility: visible;
-        transform: translate(-50%, 10%) scale(0.96);
-    }
-
-    10% {
-        z-index: 2;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    58% {
-        z-index: 2;
-        opacity: 1;
-        transform: translate(-50%, -22%) scale(1);
-    }
-
-    59% {
-        z-index: 6;
-        transform: translate(-50%, -22%) scale(1);
-    }
-
-    100% {
-        z-index: 6;
-        opacity: 1;
-        visibility: visible;
-        transform: translate(-50%, -30%) scale(1);
-    } */
-
     @keyframes postcard-out-mobile {
     0% {
         z-index: 2;
