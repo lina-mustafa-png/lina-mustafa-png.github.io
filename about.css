@@ -386,10 +386,6 @@ html, body {
         backface-visibility: hidden;
     }
 
-    .photo-area {
-        flex-shrink: 0;
-        gap: 0.3rem;
-    }
 
     .photo {
         width: min(45%, 140px);
