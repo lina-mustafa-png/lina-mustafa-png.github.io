@@ -195,5 +195,5 @@ resetButton.addEventListener("click", () => {
 });
 
 backButton.addEventListener("click", () => {
-    window.location.href = "../../../projects.html";
+    window.location.href = "../../../index.html#projects";
 });

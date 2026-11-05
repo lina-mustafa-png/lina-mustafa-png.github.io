@@ -1,20 +1,14 @@
-const about = document.getElementById("aboutbtn");
-const projects = document.getElementById("projectsbtn");
-const skills = document.getElementById("skillsbtn");
-const contact = document.getElementById("contactbtn");
+const copyButton = document.getElementById("copy-email");
+const copyStatus = document.getElementById("copy-status");
 
-about.addEventListener("click", function () {
-    window.location.href = "about.html";
-});
-
-projects.addEventListener("click", function () {
-    window.location.href = "projects.html";
-});
-
-skills.addEventListener("click", function () {
-    window.location.href = "skills.html";
-});
-
-contact.addEventListener("click", function () {
-    window.location.href = "contact.html";
-});
+if (copyButton && copyStatus) {
+    copyButton.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText("lina9.mustafa90@gmail.com");
+            copyStatus.textContent = "Email copied!";
+        } catch {
+            copyStatus.textContent =
+                "Please copy the email address above manually.";
+        }
+    });
+}
