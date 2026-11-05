@@ -1,550 +1,1758 @@
-* {
-    box-sizing: border-box;
+:root{--cream:#faf6ec;--paper:#fffdf5;--pink:#efd6d8;--rose:#a55364;--ink:#493b35;--muted:#75645d;--line:#d8c7ba}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:6px}img{max-width:100%;display:block}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.1}h2{font-size:clamp(38px,4.5vw,62px);margin:15px 0 24px}h2 em{color:var(--rose);font-weight:400}.handwritten{font-family:'La Belle Aurore',cursive;font-size:26px;line-height:1.3}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:600}.site-header{height:90px;max-width:1320px;margin:auto;padding:0 55px;display:flex;align-items:center;justify-content:space-between}.wordmark{font-family:'DM Serif Display',serif;font-style:italic;font-size:43px;line-height:1}.wordmark span{font-size:22px;color:var(--rose);vertical-align:top;padding-left:5px}nav{display:flex;align-items:center;gap:38px;font-size:13px}nav a:hover{color:var(--rose)}.nav-contact{border-bottom:1px solid var(--rose);padding:5px 0}.hero{background:repeating-linear-gradient(90deg,#f2dcdc 0px,#f2dcdc 68px,#faf0e7 68px,#faf0e7 136px);border-top:1px solid #dfc4c2;border-bottom:1px solid #dfc4c2;padding:25px 4% 0;overflow:hidden}.hero-caption{display:flex;justify-content:space-between;max-width:1180px;margin:auto;font-size:9px;letter-spacing:1.8px}.hero-title{display:flex;align-items:center;justify-content:center;gap:35px;padding-top:25px}.hero h1{font-size:clamp(64px,9.6vw,138px);letter-spacing:-5px;margin:0}.sparkle{font-size:54px;color:var(--rose)}.role{text-align:center;font-size:11px;letter-spacing:2.5px;margin:16px 0 0}.role span{padding:0 18px;color:var(--rose)}.collage{height:455px;position:relative;max-width:1140px;margin:0 auto}.polaroid{position:absolute;width:190px;left:2%;top:50px;background:var(--paper);padding:13px 13px 10px;transform:rotate(-8deg);box-shadow:2px 6px 12px #6e453325;transition:transform .3s}.polaroid img{width:100%;height:185px;object-fit:cover;object-position:center 28%;filter:saturate(.8)}.polaroid>span:last-child{display:block;text-align:center;font-family:'La Belle Aurore',cursive;font-size:20px;padding-top:10px}.tape{position:absolute;z-index:2;width:90px;height:25px;top:-12px;left:calc(50% - 45px);transform:rotate(-5deg);background:repeating-linear-gradient(90deg,#b8bda863 0 8px,#d0cfbb8a 8px 16px);clip-path:polygon(2% 0,98% 4%,95% 17%,100% 27%,96% 45%,100% 60%,95% 78%,99% 100%,0 96%,4% 78%,0 64%,4% 42%,0 24%)}.welcome-note{position:absolute;left:24%;top:40px;transform:rotate(-5deg);font-size:13px}.welcome-note .handwritten{font-size:36px;color:var(--rose)}.welcome-note p{margin:4px 0}.tiny-star{position:absolute;font-size:36px;right:-26px;bottom:0}.laptop{position:absolute;left:30%;top:192px;width:390px;transform:rotate(-3deg);transition:transform .3s}.laptop-screen{background:#d1c0bc;border:2px solid #6d5a52;border-radius:12px 12px 4px 4px;padding:13px 14px 16px;box-shadow:4px 7px 10px #765c3e25}.window-bar{height:22px;background:#edcfd4;display:flex;align-items:center;gap:5px;padding:0 9px;border:1px solid #9c8580;border-bottom:0}.window-bar i{width:5px;height:5px;border:1px solid #9b6a75;border-radius:100%}.window-bar span{font-size:8px;margin-left:13px}.screen-body{height:119px;background:#fff9ed;border:1px solid #9c8580;padding:17px 16px;position:relative}.code-comment{font-family:monospace;font-size:9px;color:#8b8273;display:block}.code-line{display:block;font-family:monospace;font-size:24px;margin:5px 0}.code-pink{color:var(--rose)}.screen-link{font-size:10px;letter-spacing:1px}.cursor{position:absolute;right:15px;bottom:15px;color:var(--rose)}.laptop-base{height:16px;margin:0 -28px;background:#e2d5cf;border:2px solid #6d5a52;border-radius:2px 2px 40px 40px;position:relative}.laptop-base:before{content:'';width:58px;height:5px;border:1px solid #6d5a52;border-top:0;border-radius:0 0 10px 10px;position:absolute;left:calc(50% - 29px);top:0}.notebook{position:absolute;right:7%;top:41px;width:223px;height:238px;padding:27px 22px 20px 38px;transform:rotate(8deg);background:#f7f1dc;background-image:linear-gradient(#abac8b23 1px,transparent 1px);background-size:100% 25px;border:1px solid #cabfaa;box-shadow:5px 6px 0 #e8dec8,7px 8px 8px #77594326;transition:transform .3s}.notebook small{font-size:8px;letter-spacing:1.2px}.notebook strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:33px;line-height:1.1;display:block;margin:13px 0}.notebook .handwritten{font-size:15px}.notebook-binding{position:absolute;left:9px;top:8px;bottom:8px;width:13px;background:repeating-linear-gradient(0deg,transparent 0 16px,#8c7761 16px 18px,transparent 18px 22px)}.notebook-star{position:absolute;bottom:4px;right:20px;font-size:33px;color:var(--rose)}.coffee{position:absolute;width:117px;left:6%;top:302px;transform:rotate(8deg)}.coffee-label{position:absolute;top:409px;left:1%;font-size:20px}.envelope{position:absolute;width:178px;height:109px;right:3%;top:322px;background:#e3a9b3;border:1px solid #bf808f;transform:rotate(-10deg);box-shadow:3px 5px 8px #765c3e25;transition:transform .3s}.envelope:before,.envelope:after{content:'';position:absolute;inset:0;pointer-events:none}.envelope:before{background:#eabdc5;clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%)}.envelope:after{border-bottom:1px solid #c58e9a;clip-path:polygon(0 100%,50% 40%,100% 100%);background:#ecc4ca}.envelope-flap{position:absolute;inset:0;background:#f4d3d6;clip-path:polygon(0 0,100% 0,50% 62%);transition:transform .3s;transform-origin:top;z-index:1}.seal{position:absolute;z-index:3;left:calc(50% - 14px);top:43px;background:#9d5265;color:#f9e6e1;border-radius:50%;width:28px;height:28px;text-align:center;font-size:19px;line-height:28px}.envelope-label{position:absolute;z-index:3;bottom:4px;width:100%;text-align:center;font-family:'La Belle Aurore',cursive;font-size:17px}.envelope:hover .envelope-flap{transform:rotateX(40deg)}.desk-star{position:absolute;left:23%;top:300px;font-size:48px;color:var(--rose)}.polaroid:hover{transform:rotate(-4deg) translateY(-5px)}.notebook:hover{transform:rotate(4deg) translateY(-5px)}.laptop:hover{transform:rotate(-1deg) translateY(-5px)}.envelope:hover{transform:rotate(-5deg) translateY(-5px)}.hero-bottom{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:15px auto 0;padding:22px 0;border-top:1px solid #b78d8b60}.hero-bottom>a,.hero-bottom>span:last-child{font-size:9px;letter-spacing:1.6px}.hero-bottom>a span{font-size:20px;margin-left:12px}.hero-bottom .handwritten{font-size:21px}.section-wrap{max-width:1120px;margin:auto;padding:85px 42px}.section-heading{margin-bottom:38px}.about-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:95px;align-items:center}.about-paper{position:relative;background:var(--paper);padding:35px 42px;border:1px solid #e8dfd0;box-shadow:5px 6px 0 #efe7d7;transform:rotate(-1deg)}.about-paper .handwritten{font-size:35px;color:var(--rose);margin-bottom:15px}.about-paper p:not(.handwritten){font-size:14px}.text-link{display:inline-block;border-bottom:1px solid var(--rose);font-size:12px;padding:5px 0}.margin-notes{transform:rotate(2deg)}.margin-notes>.handwritten{color:var(--rose)}.margin-notes p{font-size:13px;border-bottom:1px solid #d8c7ba80;padding:12px 0;margin:0}.margin-notes p span{font-size:10px;color:var(--rose);margin-right:15px}.margin-notes img{width:135px;margin:22px 0 0 auto;mix-blend-mode:multiply;transform:rotate(8deg)}.projects-section{background:#f3e6e1;border-block:1px solid #e5d5cd}.heading-row{display:flex;align-items:center;justify-content:space-between}.heading-row>.handwritten{font-size:23px;transform:rotate(-6deg);color:var(--rose)}.project{display:grid;grid-template-columns:1.1fr 1fr;gap:65px;align-items:center;margin:65px 0 85px}.project-photo{position:relative;padding:13px 13px 5px;background:var(--paper);box-shadow:3px 5px 8px #6e45331a;transform:rotate(-3deg);transition:transform .3s}.project-photo:hover{transform:rotate(0)}.mini-window{display:flex;justify-content:space-between;background:#e8cecf;font-size:8px;padding:8px 10px;color:#805e60}.project-photo img{width:100%;aspect-ratio:1.77;object-fit:cover;object-position:top}.photo-caption{display:block;padding:13px 6px;font-family:'La Belle Aurore',cursive;font-size:21px}.project-copy h3{font-size:36px;margin:15px 0 20px}.project-copy p{font-size:13px;line-height:1.9}.project-copy .eyebrow{font-size:9px;letter-spacing:1.6px}.project-links{display:flex;gap:15px;align-items:center;flex-wrap:wrap;font-size:11px;margin-top:23px}.button{display:inline-block;background:var(--rose);color:#fff9ee;padding:11px 17px;border-radius:2px}.button:hover{background:#854454}.reverse .project-photo{order:2;transform:rotate(3deg)}.reverse .project-copy{order:1}.reverse .project-photo:hover{transform:rotate(0)}.hardware-note{border-block:1px solid #cbb4ad;padding:24px 3px;display:flex;gap:30px;align-items:center}.hardware-note>span:first-child{font-size:43px;color:var(--rose)}.hardware-note small{font-size:9px;letter-spacing:1.5px}.hardware-note h3{font-size:25px;margin:6px 0}.hardware-note p{font-size:12px;margin:0}.hardware-note>span:last-child{margin-left:auto;font-size:30px}.skills-section{text-align:center}.skills-section .section-heading p{font-size:13px}.skill-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:50px 0 35px}.skill-note{position:relative;background:#f1dadd;text-align:left;min-height:235px;padding:30px 24px;transform:rotate(-3deg);box-shadow:3px 5px 8px #6e453315}.skill-note:nth-child(2){background:#eee7ce;transform:rotate(2deg)}.skill-note:nth-child(3){background:#e5e7d9;transform:rotate(-1deg)}.note-number{font-size:11px;display:block;margin-bottom:25px}.skill-note h3{font-size:25px;margin-bottom:15px}.skill-note p{font-size:12px;line-height:1.9}.skill-note .handwritten{font-size:18px;color:#75544a}.contact-section{text-align:center;background:repeating-linear-gradient(90deg,#efd8d8 0 68px,#f7e9e1 68px 136px);border-top:1px solid #dfc4c2;padding:70px 20px 55px}.contact-section h2{margin-top:20px}.contact-section>p{font-size:13px}.email-link{display:inline-block;font-family:'DM Serif Display',serif;font-size:clamp(18px,3vw,30px);border-bottom:1px solid var(--rose);margin:10px 0 20px;overflow-wrap:anywhere}.contact-actions{display:flex;justify-content:center;gap:28px;align-items:center;font-size:12px}.contact-actions button{border:0;background:transparent;padding:0;font-size:12px;text-decoration:underline;text-underline-offset:4px}#copy-status{min-height:20px;margin:10px 0}.contact-section>.handwritten{display:block;font-size:24px;color:var(--rose)}footer{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:28px 45px;font-size:11px}footer p{margin:0}footer>a:last-child{font-size:9px;letter-spacing:1px}.skip-link{position:absolute;top:-100px;background:var(--paper);padding:12px;z-index:10}.skip-link:focus{top:0}
+@media(min-width:1500px){.hero{padding-top:30px}.collage{height:480px}.hero-title{padding-top:40px}}
+@media(max-width:900px){.site-header{padding:0 28px;height:76px}.hero-caption>span:last-child{display:none}.hero h1{letter-spacing:-3px}.sparkle{font-size:35px}.hero-title{gap:20px}.collage{height:440px}.polaroid{width:150px;left:1%;top:65px}.polaroid img{height:150px}.polaroid>span:last-child{font-size:16px}.welcome-note{left:26%;top:35px}.notebook{width:180px;height:215px;right:0;top:56px;padding-left:29px}.notebook strong{font-size:29px}.notebook small{font-size:7px}.laptop{width:325px;left:27%;top:218px}.coffee{width:90px;left:4%;top:296px}.coffee-label{font-size:16px;top:390px}.envelope{width:135px;height:90px;right:0;top:329px}.envelope .seal{top:30px}.desk-star{left:21%;top:270px}.hero-bottom>span:last-child{display:none}.about-layout{gap:40px}.section-wrap{padding:65px 30px}.project{gap:35px}.project-copy h3{font-size:29px}.skill-notes{gap:14px}.skill-note{padding:25px 18px}.skill-note h3{font-size:22px}}
+@media(max-width:600px){.site-header{height:72px;padding:0 20px}.wordmark{font-size:35px}nav{gap:19px;font-size:11px}.hero{padding:22px 18px 0;background-size:auto}.hero-caption{font-size:8px;justify-content:center}.hero-title{padding-top:27px;gap:10px}.hero h1{font-size:clamp(44px,12vw,70px);letter-spacing:-2px;white-space:nowrap}.sparkle{font-size:24px}.role{font-size:7px;letter-spacing:1.5px;line-height:1.7;margin-top:14px}.role span{padding:0 6px}.collage{height:568px;max-width:400px}.polaroid{width:137px;left:3%;top:34px}.polaroid img{height:142px}.welcome-note{left:auto;right:0;top:50px;font-size:11px}.welcome-note .handwritten{font-size:29px}.welcome-note p{line-height:1.8}.tiny-star{right:3px;bottom:-45px}.laptop{width:250px;left:11%;top:268px}.screen-body{height:100px;padding:12px 8px}.code-comment{font-size:6px}.code-line{font-size:20px}.screen-link{font-size:8px}.window-bar span{font-size:7px}.laptop-screen{padding:10px}.notebook{width:138px;height:158px;right:0;top:429px;padding:14px 12px 12px 26px;transform:rotate(5deg)}.notebook strong{font-size:23px;margin:7px 0}.notebook small{font-size:5px;letter-spacing:.8px}.notebook .handwritten{font-size:11px}.notebook-star{font-size:24px;right:13px;bottom:-3px}.coffee{width:65px;left:auto;right:0;top:209px}.coffee-label{left:auto;right:17%;top:222px;font-size:15px;transform:rotate(-9deg)}.envelope{left:7%;right:auto;top:454px;width:130px;height:82px}.envelope-label{font-size:14px}.envelope .seal{top:28px;width:24px;height:24px;font-size:17px;line-height:24px}.desk-star{top:375px;left:0;font-size:30px}.hero-bottom{margin-top:52px;padding:18px 0;gap:10px}.hero-bottom .handwritten{font-size:17px}.hero-bottom>a{font-size:7px;letter-spacing:1px}.hero-bottom>a span{margin-left:5px}.section-wrap{padding:56px 24px}.eyebrow{font-size:9px;letter-spacing:1.5px}.section-heading{margin-bottom:30px}.about-layout{grid-template-columns:1fr;gap:38px}.about-paper{padding:28px}.margin-notes{padding:0 12px}.margin-notes img{width:110px}.heading-row{display:block}.heading-row>.handwritten{display:block;margin-top:15px;transform:none;font-size:22px}.project{grid-template-columns:1fr;gap:28px;margin:42px 0 58px}.project-copy h3{font-size:32px}.reverse .project-photo,.reverse .project-copy{order:initial}.project-photo{margin:0 5px}.hardware-note{gap:17px}.hardware-note h3{font-size:22px}.hardware-note>span:first-child{font-size:28px}.skill-notes{grid-template-columns:1fr;gap:27px;margin-top:35px}.skill-note{min-height:auto;padding:25px 30px}.note-number{margin-bottom:16px}.skill-note p{font-size:13px}.skill-note h3{font-size:26px}.contact-section{padding-top:55px}.contact-actions{gap:24px}footer{padding:25px 20px;gap:20px}footer p{font-size:9px;max-width:120px}footer>a:last-child{font-size:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+@media(max-width:600px){.notebook strong{font-size:20px;white-space:nowrap}.notebook .handwritten{font-size:10px;line-height:1.4;display:block}.polaroid>span:last-child{font-size:14px;white-space:nowrap}.coffee-label{display:none}}
+@media(max-width:360px){nav{gap:12px}.hero-title{gap:7px}.hero h1{font-size:40px}.sparkle{font-size:19px}.welcome-note{font-size:10px;right:-3px}.welcome-note .handwritten{font-size:24px}.polaroid{width:123px}.polaroid img{height:135px}.polaroid>span:last-child{font-size:12px}.laptop{left:9%;width:235px}}
+
+/* HEADER AND FOOTER MONOGRAM */
+.wordmark {
+  display: inline-flex;
+  flex-shrink: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-    background-color: #ffeded;
+.wordmark img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffeded;
-    font-family: "Andada Pro", serif;
-    overflow-x: hidden;
+/* TRAVEL PHOTO COLLAGE */
+.travel-collage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 32px);
+  margin-top: 48px;
+  padding: 12px;
 }
 
-.hero {
+.travel-photo {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  background: var(--paper);
+  box-shadow: 3px 5px 12px #6e453320;
+  transform: rotate(-3deg);
+}
+
+.travel-photo:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.travel-photo:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.travel-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Allow content to wrap within its column. */
+.project-copy,
+.about-paper,
+.margin-notes,
+.skill-note {
+  min-width: 0;
+}
+
+/* TABLETS AND SMALLER LAPTOP WINDOWS */
+@media (max-width: 1000px) {
+  .collage {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1.7fr)
+      minmax(0, 1fr);
+    grid-template-areas:
+      "photo welcome notebook"
+      "coffee laptop envelope";
+    gap: 38px 30px;
+    align-items: center;
+    height: auto;
+    margin: 45px auto;
+    padding: 12px 20px;
+  }
+
+  .collage > * {
     position: relative;
+    inset: auto;
+  }
+
+  .polaroid {
+    grid-area: photo;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
-}
+    max-width: 180px;
+  }
 
-.animation {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: max(100vw, calc(100svh * 1580 / 1114));
-    aspect-ratio: 1580 / 1114;
-    transform: translate(-50%, -50%);
-}
-
-.desk-picture {
-    position: absolute;
-    inset: 0;
-    display: block;
+  .polaroid img {
     width: 100%;
-    height: 100%;
-}
-
-.desk {
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.coffee-cup {
-    position: absolute;
-    z-index: 5;
-    width: 16%;
     height: auto;
-    left: 21%;
-    top: 50%;   
-    transform-origin: 45% 45%;
-    animation: tilt-cup 1.2s ease-in-out 1.7s forwards, hide-cup 0.15s linear 2.8s forwards;
-}
+  }
 
-.computer-screen {
-    position: absolute;
-    z-index: 2;
-    left: 30.5%;
-    top: 20.5%;
-    width: 38%;
-    height: 30.5%;
-    overflow: hidden;
-    container-type: inline-size;
-}
+  .polaroid > span:last-child {
+    font-size: 15px;
+    white-space: normal;
+  }
 
-.screen-code {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: max-content;
-    max-width: 94%;
-    margin: 0;
-    padding: 0;
-    color: #bcc2cc;
-    font-family: "Courier New", monospace;
-    font-size: clamp(0.7rem, 4.5cqw, 1.7rem);
-    font-weight: 600;
-    line-height: 1.55;
-    text-align: left;
-    opacity: 1;
-    transform: translate(-50%, -50%);
-    animation: hide-code 0.01s linear 2.75s forwards;
-}
+  .welcome-note {
+    grid-area: welcome;
+    justify-self: center;
+  }
 
-.screen-code code {
-    display: block;
-    white-space: nowrap;
-}
+  .laptop {
+    grid-area: laptop;
+    width: 100%;
+  }
 
-.keyword {
-    color: #c678dd;
-}
+  .laptop-base {
+    margin-inline: -12px;
+  }
 
-.function {
-    color: #61afef;
-}
+  .screen-body {
+    padding: 12px 8px;
+  }
 
-.printf {
-    color: #56b6c2;
-}
+  .code-comment {
+    font-size: 7px;
+  }
 
-.string {
-    color: #98c379;
-}
+  .code-line {
+    font-size: 21px;
+  }
 
-.number {
-    color: #e5a75c;
-}
+  .screen-link {
+    font-size: 9px;
+  }
 
-.symbol {
-    color: #c5c9d3;
-}
-
-.code-cursor {
-    display: inline-block;
-    width: 0.55em;
-    height: 1.05em;
-    margin-left: 0.15em;
-    vertical-align: -0.15em;
-    background-color: #f4c9d6;
-    animation: code-cursor-blink 0.65s steps(1) infinite, hide-cursor 0.01s linear 2.75s forwards;
-}
-
-.error {
-    position: absolute;
-    z-index: 4;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25em;
-    color: #ff6b78;
-    font-family: "Courier New", monospace;
-    font-size: clamp(1.2rem, 9cqw, 4rem);
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    animation: error-sequence 1.1s linear 2.92s forwards, remove-error 0.01s linear 4.1s forwards;
-}
-
-.error small {
-    color: #f4c9d6;
-    font-size: 0.38em;
-    line-height: 1.1;
-    letter-spacing: 0.15em;
-}
-
-.intro-text {
-    position: absolute;
-    z-index: 3;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-    text-align: center;
-    pointer-events: none;
-}
-
-.name {
-    position: static;
-    width: 0;
-    max-width: 100%;
-    margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    color: #F4C9D6;
-    border-right: 2px solid transparent;
-    opacity: 0;
-    font-family: 'Courier New', monospace;
-    font-size: clamp(1rem, 9.7cqw, 4rem);
-    line-height: 1.05;
-    text-shadow: 0 2px 6px rgb(38 21 13 / 45%);
-    animation: show-name 0.01s linear 4.3s forwards, type-name 1.5s steps(12, end) 4.3s forwards, blink-name-cursor 0.7s step-end 4.3s infinite, hide-name-cursor 0.01s linear 5.9s forwards;
-}
-
-.subtitle {
-    position: static;
-    width: 0;
-    max-width: 100%;
-    margin: 0.5em 0 0;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    color: #f4c9d6;
-    border-right: 2px solid transparent;
-    font-family: "Advent Pro", sans-serif;
-    font-size: clamp(0.55rem, 5cqw, 1.35rem);
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
-    opacity: 0;
-    animation: show-subtitle 0.01s linear 5.95s forwards, type-subtitle 2.3s steps(30, end) 5.95s forwards, blink-subtitle-cursor 0.7s step-end 5.95s infinite;
-}
-
-.coffee-spill {
-    position: absolute;
-    z-index: 6;
-    width: 36.5%;
+  .notebook {
+    grid-area: notebook;
+    width: 100%;
     height: auto;
-    left: 19%;
-    top: 49%;   
-    opacity: 0;
-    transform: scale(0.7);
-    transform-origin: center;
-    animation: reveal-spill 0.25s ease-out 2.7s forwards;
+    min-height: 200px;
+    padding: 22px 12px 28px 28px;
+  }
+
+  .notebook strong {
+    font-size: 25px;
+    white-space: nowrap;
+  }
+
+  .notebook small {
+    font-size: 7px;
+  }
+
+  .notebook .handwritten {
+    display: block;
+    font-size: 13px;
+  }
+
+  .coffee {
+    grid-area: coffee;
+    width: 90px;
+    justify-self: center;
+  }
+
+  .envelope {
+    grid-area: envelope;
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .coffee-label,
+  .desk-star {
+    display: none;
+  }
 }
 
-.cursor {
-    display: inline;
-    margin-left: 2px;
-    animation: blink 0.7s infinite;
+/* NARROW TABLETS AND PHONES */
+@media (max-width: 760px) {
+  .about-layout,
+  .project,
+  .skill-notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reverse .project-photo,
+  .reverse .project-copy {
+    order: initial;
+  }
+
+  .skill-notes {
+    gap: 28px;
+  }
+
+  .collage {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+    grid-template-areas:
+      "photo welcome"
+      "laptop laptop"
+      "coffee notebook"
+      "envelope notebook";
+    max-width: 450px;
+    gap: 30px;
+  }
+
+  .laptop {
+    width: 90%;
+    max-width: 330px;
+    justify-self: center;
+  }
+
+  .notebook {
+    max-width: 185px;
+    justify-self: center;
+  }
+
+  .envelope {
+    justify-self: center;
+  }
+
+  .hero-bottom {
+    margin-top: 0;
+  }
 }
 
-.scroll-link {
-    position: absolute;
-    z-index: 10;
-    left: 50%;
-    bottom: 3%;
-    color: #F4C9D6;
-    text-decoration: none;
-    font-size: clamp(3rem, 5vw, 5rem);
-    opacity: 0;
-    transform: translateX(-50%);
-    filter: drop-shadow(0 3px 3px rgb(38 21 13 / 35%));
-    animation: reveal-arrow 0.8s ease 8.2s forwards;
-}
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+  .site-header {
+    height: auto;
+    min-height: 76px;
+    padding: 12px 16px;
+    gap: 12px;
+  }
 
-.scroll-link span {
-    display: inline-block;
-    line-height: 1;
-    animation: bounce 1.5s ease-in-out infinite;
-}  
+  .wordmark img {
+    width: 48px;
+    height: 48px;
+  }
 
-.menu {
-    min-height: 100vh;
-    padding: 5rem 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffeded;
-}
-
-.menu-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .site-header nav {
     flex-wrap: wrap;
-    gap: 1.5rem;
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .hero-title {
+    gap: 8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 60px);
+    letter-spacing: -2px;
+  }
+
+  .sparkle {
+    font-size: 18px;
+  }
+
+  .role {
+    letter-spacing: 1px;
+  }
+
+  .collage {
+    padding-inline: 8px;
+    gap: 28px 22px;
+    margin-block: 35px;
+  }
+
+  .polaroid {
+    padding: 9px;
+  }
+
+  .polaroid > span:last-child {
+    font-size: 12px;
+  }
+
+  .welcome-note .handwritten {
+    font-size: 26px;
+  }
+
+  .welcome-note p {
+    font-size: 11px;
+  }
+
+  .tiny-star {
+    display: none;
+  }
+
+  .notebook strong {
+    font-size: 22px;
+  }
+
+  .notebook .handwritten {
+    font-size: 12px;
+  }
+
+  .travel-collage {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 290px;
+    margin-inline: auto;
+    gap: 30px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 }
 
-.menu-buttons button {
-    padding: 0.8rem 2rem;
-    background-color: #26150D;
-    color: #F4C9D6;
-    border: 2px solid #26150D;
-    border-radius: 8px;
-    font-family: "Andada Pro", serif;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+/* ABOUT SECTION */
+.about.section-wrap {
+  max-width: 1240px;
+  padding-inline: clamp(22px, 4vw, 48px);
 }
 
-.menu-buttons button:hover {
-    background-color: #4A291D;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgb(38 21 13 / 20%);
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: clamp(30px, 4vw, 60px);
+  row-gap: 28px;
+  align-items: start;
 }
 
-.menu-buttons button:focus-visible {
-    outline: 3px solid #D9819C;
-    outline-offset: 4px;
+/* PERSONAL FACTS AND UPPER-RIGHT STAMPS */
+.margin-notes {
+  position: relative;
+  min-width: 0;
+  padding-top: 115px;
+  transform: none;
 }
 
-/* --- animations --- */
-
-@keyframes hide-name-cursor {
-    to {
-        border-color: transparent;
-    }
+.margin-notes > img {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  width: clamp(115px, 12vw, 155px);
+  margin: 0;
+  transform: rotate(8deg);
 }
 
-@keyframes show-subtitle {
-    to {
-        opacity: 1;
-    }
+/* PHOTOS SPAN BOTH COLUMNS */
+.about-layout > .travel-collage {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.85fr)
+    minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 38px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 16px 28px;
 }
 
-@keyframes type-subtitle {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 26ch;
-    }
+.about-layout > .travel-collage .travel-photo {
+  position: relative;
+  grid-column: auto;
+  grid-row: auto;
+  justify-self: center;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  background: var(--paper);
+  box-shadow: 3px 6px 14px #6e453325;
 }
 
-@keyframes blink-subtitle-cursor {
-    0%,
-    100% {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: #f4c9d6;
-    }
+/* Different sizes come from the column widths above. */
+.about-layout > .travel-collage .travel-photo:nth-child(1) {
+  transform: rotate(-5deg);
 }
 
-@keyframes code-cursor-blink {
-    0%, 49% {
-        opacity: 1;
-    }
-
-    50%, 100% {
-        opacity: 0;
-    }
+.about-layout > .travel-collage .travel-photo:nth-child(2) {
+  transform: rotate(6deg);
 }
 
-@keyframes hide-cursor {
-    to {
-        visibility: hidden;
-    }
+.about-layout > .travel-collage .travel-photo:nth-child(3) {
+  transform: rotate(-4deg);
 }
 
-@keyframes hide-code {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+/* Show the full photographs without cropping. */
+.about-layout > .travel-collage .travel-photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  transform: none;
+  mix-blend-mode: normal;
 }
 
-@keyframes error-sequence {
-    0% {
-        opacity: 0;
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    15% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-5px);
-    }
-
-    30% {
-        opacity: 0.25;
-        visibility: visible;
-        transform: translateX(5px);
-    }
-
-    45% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-3px);
-    }
-
-    65% {
-        opacity: 0.4;
-        visibility: visible;
-        transform: translateX(3px);
-    }
-
-    85% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    100% {
-        opacity: 0;
-        visibility: visible;
-        visibility: hidden;
-    }
+/* Tape on each photograph */
+.travel-photo .tape {
+  width: 58px;
+  height: 20px;
+  left: calc(50% - 29px);
+  top: -10px;
 }
 
-@keyframes remove-error {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+/* TABLETS AND PHONES */
+@media (max-width: 760px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 35px;
+  }
+
+  .margin-notes {
+    padding: 85px 0 0;
+  }
+
+  .margin-notes > img {
+    top: -15px;
+    right: 5px;
+    width: 115px;
+  }
 }
 
-@keyframes tilt-cup {
-    0% {
-        transform: rotate(0deg);
-    }
+/* Two photos above, one centred underneath */
+@media (max-width: 600px) {
+  .about-layout > .travel-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+    padding: 12px 8px 20px;
+  }
 
-    60% {
-        transform: rotate(48deg);
-    }
-
-    100% {
-        transform: rotate(42deg);
-    }
+  .about-layout > .travel-collage .travel-photo:nth-child(3) {
+    grid-column: 1 / -1;
+    width: 55%;
+    margin-top: -12px;
+  }
 }
 
-@keyframes hide-cup {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+/* Position stamps relative to the whole About section. */
+.about.section-wrap {
+  position: relative;
 }
 
-@keyframes reveal-spill {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.about > .about-stamps {
+  position: absolute;
+  top: 125px;
+  right: clamp(28px, 5vw, 70px);
+  width: clamp(130px, 15vw, 185px);
+  height: auto;
+  margin: 0;
+  transform: rotate(8deg);
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
-@keyframes show-name {
-    to {
-        opacity: 1;
-        border-right-color: #f4c9d6;
-    }
+/* On smaller screens, reserve room beside the heading. */
+@media (max-width: 760px) {
+  .about > .section-heading {
+    padding-right: 105px;
+  }
+
+  .about > .about-stamps {
+    top: 45px;
+    right: 22px;
+    width: 90px;
+  }
 }
 
-@keyframes type-name {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 12ch;
-    }
+/* Small boarding pass */
+.collage > .welcome-note.boarding-pass {
+  box-sizing: border-box;
+  width: 205px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0;
+  background: var(--paper, #fffdf5);
+  border: 1px solid #c58e9b;
+  border-radius: 8px;
+  box-shadow: 3px 5px 12px #493b3515;
+  transform: rotate(2deg) scale(0.95);
+  transform-origin: top left;
+  overflow: hidden;
 }
 
-@keyframes blink-name-cursor {
-    0%,
-    100% {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: #f4c9d6;
-    }
+.boarding-pass-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #efd6d8;
+  color: var(--ink, #493b35);
+  font-size: 8px;
+  letter-spacing: 1px;
 }
 
-@keyframes reveal-introduction {
-    from { 
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.boarding-pass-heading > span:last-child {
+  font-size: 17px;
+  line-height: 1;
 }
 
-@keyframes reveal-arrow {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+.boarding-pass-label {
+  display: block;
+  margin: 10px 10px 3px;
+  font-size: 7px;
+  letter-spacing: 1.5px;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+.boarding-pass-city {
+  display: block;
+  padding: 0 10px 10px;
+  color: var(--rose, #a55364);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: normal;
+  line-height: 1.15;
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(7px);
-    }
+.boarding-pass-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 7px 10px;
+  border-top: 1px dashed #c58e9b;
+  font-size: 7px;
+  letter-spacing: 1px;
 }
 
-@media (max-width: 650px) {
-    .menu {
-        padding: 3rem 6%;
-    }
-
-    .menu-buttons button {
-        padding: 0.7rem 1.5rem;
-        font-size: 1.1rem;
-    }
+.boarding-pass-barcode {
+  display: block;
+  width: 42px;
+  height: 15px;
+  background: repeating-linear-gradient(
+    to right,
+    #493b35 0 1px,
+    transparent 1px 3px,
+    #493b35 3px 5px,
+    transparent 5px 7px
+  );
+  opacity: 0.65;
 }
 
-@media (max-width: 650px) and (orientation: portrait) {
-    .animation {
-        width: max(100vw, calc(100svh * 657 / 1167));
-        height: auto;
-        aspect-ratio: 657 / 1167;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
+/* Smaller handwriting, lower beneath the portrait */
+.collage > .coffee.creating-caption {
+  top: 340px;
+  width: 210px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  color: var(--rose, #a55364);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 23px;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  transform: rotate(-6deg);
+}
 
-    .desk {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
+/* Preserve the responsive grid layout */
+@media (max-width: 1000px) {
+  .collage > .welcome-note.boarding-pass,
+  .collage > .coffee.creating-caption {
+    position: relative;
+    inset: auto;
+    min-width: 0;
+    justify-self: center;
+  }
 
-    .computer-screen {
-        left: 18%;
-        top: 37%;
-        width: 64%;
-        height: 20%;
-    }
+  .collage > .welcome-note.boarding-pass {
+    grid-area: welcome;
+  }
 
-    .coffee-cup {
-        width: 25%;
-        left: 2%;
-        top: 58%;
-    }
+  .collage > .coffee.creating-caption {
+    grid-area: coffee;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 18px;
+  }
+}
 
-    .coffee-spill {
-        width: 50%;
-        left: 6%;
-        top: 60%;
-    }
+@media (max-width: 380px) {
+  .collage > .coffee.creating-caption {
+    font-size: 16px;
+  }
+}
 
-    .scroll-link {
-        bottom: 3%;
-    }
+/* Make the whole boarding pass smaller */
+.collage > .welcome-note.boarding-pass {
+  transform: rotate(-4deg) scale(0.75);
+  transform-origin: top left;
+}
+
+/* Move the handwriting lower and left on desktop */
+@media (min-width: 1001px) {
+  .collage > .coffee.creating-caption {
+    top: 375px;
+    left: 2%;
+  }
+
+  .collage > .welcome-note.boarding-pass {
+    left: 16%;
+    top: 65px;
+    z-index: 3;
+  }
+}
+
+/* ========================================
+   PHOTO BOOTH LANDING SECTION
+   ======================================== */
+
+.photobooth-hero {
+  --booth-cream: var(--cream, #faf6ec);
+  --booth-paper: var(--paper, #fffdf5);
+  --booth-ink: var(--ink, #493b35);
+  --booth-muted: var(--muted, #75645d);
+  --booth-rose: var(--rose, #a55364);
+  --booth-line: var(--line, #d8c7ba);
+  --booth-blush: #efdde0;
+  --booth-pink: #e8c6cf;
+
+  padding: 32px 20px 0;
+  color: var(--booth-ink);
+  background: var(--booth-cream);
+  border-bottom: 1px solid var(--booth-line);
+  font-family: "DM Sans", sans-serif;
+}
+
+.photobooth-hero,
+.photobooth-hero *,
+.photobooth-hero *::before,
+.photobooth-hero *::after {
+  box-sizing: border-box;
+}
+
+.photobooth-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.photobooth-hero a {
+  text-decoration: none;
+}
+
+.photobooth-hero a:focus-visible {
+  outline: 3px solid var(--booth-rose);
+  outline-offset: 5px;
+}
+
+/* Name and introductory caption */
+
+.photobooth-heading {
+  text-align: center;
+}
+
+.photobooth-heading > p {
+  margin: 0;
+  color: var(--booth-muted);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 2px;
+}
+
+.photobooth-heading h1 {
+  margin: 10px 0 6px;
+  color: var(--booth-ink);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(46px, 10vw, 96px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.photobooth-heading h1 em {
+  color: var(--booth-rose);
+  font-weight: 400;
+}
+
+.photobooth-heading > span {
+  display: block;
+  margin-top: 8px;
+  color: var(--booth-rose);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+/* Mobile layout first */
+
+.photobooth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  max-width: 460px;
+  margin: 30px auto 0;
+  padding-bottom: 32px;
+}
+
+.photobooth-layout > * {
+  min-width: 0;
+}
+
+/* The booth */
+
+.photobooth-scene {
+  position: relative;
+  width: min(100%, 330px);
+  margin-inline: auto;
+}
+
+.photobooth-machine {
+  position: relative;
+  z-index: 2;
+  padding: 15px 17px 19px;
+  background: var(--booth-blush);
+  border: 1px solid #cba7af;
+  border-radius: 18px 18px 7px 7px;
+  box-shadow:
+    inset 0 3px 0 #ffffff70,
+    0 4px 0 #d6b3bc,
+    0 8px 16px #493b350c;
+}
+
+/* Inset cream sign */
+
+.photobooth-sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 66px;
+  padding: 11px 9px;
+  background: var(--booth-paper);
+  border: 1px solid #cfb7b6;
+  border-radius: 9px;
+  box-shadow: inset 0 0 0 4px #f5eae5;
+}
+
+.photobooth-sign p {
+  margin: 0;
+  color: var(--booth-rose);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 1.3px;
+  text-align: center;
+}
+
+.photobooth-sign p > span {
+  display: block;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.photobooth-sign-star {
+  flex-shrink: 0;
+  color: var(--booth-rose);
+  font-size: 25px;
+}
+
+/* Small details above the slot */
+
+.photobooth-machine-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 5px 10px;
+}
+
+.photobooth-machine-details > span:first-child {
+  color: #785b62;
+  font-size: 7px;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
+
+.photobooth-light {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  background: #a8ad95;
+  border: 1px solid #8e957b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #fffdf540;
+}
+
+.photobooth-slot {
+  height: 12px;
+  margin-inline: 7px;
+  background: #65504c;
+  border: 1px solid #503e3b;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 3px 4px #30232160,
+    0 1px 0 #ffffff80;
+}
+
+/* Printed strip:
+   clipped at the top so it appears to emerge from the slot */
+
+.photobooth-print-area {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin-top: -25px;
+  padding: 0 16px 16px;
+  overflow: hidden;
+}
+
+.photobooth-strip {
+  position: relative;
+  width: 192px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 10px 0;
+  background: var(--booth-paper);
+  border: 1px solid #ded0c1;
+  box-shadow: 3px 6px 10px #493b351c;
+  transform: rotate(-2deg);
+  transform-origin: center top;
+}
+
+/* Three landscape crops keep the strip compact on phones */
+
+.photobooth-picture {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.65;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background: #e6dbd0;
+  border: 1px solid #d9cbbc;
+}
+
+.photobooth-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust these percentages if a face needs repositioning */
+
+.photobooth-picture-portrait img {
+  object-position: center 28%;
+}
+
+.photobooth-picture-barcelona img {
+  object-position: center 45%;
+}
+
+.photobooth-picture-camel img {
+  object-position: center 50%;
+}
+
+.photobooth-picture > span {
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  color: #fffdf5;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px #00000090;
+}
+
+.photobooth-strip figcaption {
+  padding: 5px 0 12px;
+  color: var(--booth-rose);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.photobooth-side-note {
+  display: none;
+}
+
+/* Introduction */
+
+.photobooth-copy {
+  text-align: center;
+}
+
+.photobooth-eyebrow {
+  margin: 0;
+  color: var(--booth-muted);
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 1.6px;
+}
+
+.photobooth-copy h2 {
+  margin: 14px 0 17px;
+  color: var(--booth-ink);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(34px, 7.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -.8px;
+}
+
+.photobooth-copy h2 em {
+  color: var(--booth-rose);
+  font-weight: 400;
+}
+
+.photobooth-description {
+  max-width: 370px;
+  margin: 0 auto;
+  color: var(--booth-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Project and About links */
+
+.photobooth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 20px;
+  margin-top: 24px;
+}
+
+.photobooth-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.photobooth-primary {
+  padding: 12px 19px;
+  color: var(--booth-paper);
+  background: var(--booth-rose);
+  border: 1px solid var(--booth-rose);
+  border-radius: 3px;
+  box-shadow: 2px 3px 0 #d9b7bf;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.photobooth-secondary {
+  padding: 9px 0;
+  color: var(--booth-ink);
+  border-bottom: 1px solid #bc9298;
+}
+
+.photobooth-secondary > span {
+  color: var(--booth-rose);
+  transition: transform 180ms ease;
+}
+
+.photobooth-handwritten {
+  margin: 24px 0 0;
+  color: var(--booth-rose);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+/* Bottom edge */
+
+.photobooth-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--booth-line);
+  text-align: center;
+}
+
+.photobooth-bottom > span {
+  color: var(--booth-rose);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.photobooth-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: var(--booth-muted);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.photobooth-bottom a > span {
+  color: var(--booth-rose);
+  font-size: 22px;
+}
+
+/* Desktop: booth beside the introduction */
+
+@media (min-width: 800px) {
+  .photobooth-hero {
+    padding: 36px 32px 0;
+  }
+
+  .photobooth-heading > span {
+    font-size: 24px;
+  }
+
+  .photobooth-layout {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 70px;
+    max-width: 940px;
+    margin-top: 38px;
+    padding: 0 20px 42px;
+  }
+
+  .photobooth-scene {
+    width: 350px;
+    max-width: 100%;
+  }
+
+  .photobooth-strip {
+    width: 212px;
+  }
+
+  .photobooth-side-note {
+    position: absolute;
+    right: -24px;
+    bottom: 48px;
+    z-index: 4;
+    display: block;
+    color: var(--booth-rose);
+    font-family: "La Belle Aurore", cursive;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    transform: rotate(7deg);
+    pointer-events: none;
+  }
+
+  .photobooth-copy {
+    text-align: left;
+  }
+
+  .photobooth-eyebrow {
+    font-size: 9px;
+  }
+
+  .photobooth-copy h2 {
+    font-size: clamp(40px, 4.3vw, 54px);
+  }
+
+  .photobooth-description {
+    margin-inline: 0;
+    font-size: 15px;
+  }
+
+  .photobooth-actions {
+    justify-content: flex-start;
+  }
+
+  .photobooth-bottom {
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* Narrow phones */
+
+@media (max-width: 360px) {
+  .photobooth-hero {
+    padding-inline: 16px;
+  }
+
+  .photobooth-heading > p {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .photobooth-heading > span {
+    font-size: 18px;
+  }
+
+  .photobooth-sign {
+    gap: 8px;
+  }
+
+  .photobooth-sign p {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .photobooth-sign-star {
+    font-size: 20px;
+  }
+
+  .photobooth-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Subtle interactions for mouse users */
+
+@media (hover: hover) and (pointer: fine) {
+  .photobooth-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 5px 0 #d9b7bf;
+  }
+
+  .photobooth-secondary:hover > span {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Short printing animation; no JavaScript needed */
+
+@keyframes photobooth-print {
+  from {
+    transform: translateY(-65px) rotate(-2deg);
+  }
+
+  to {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .photobooth-strip {
+    animation: photobooth-print 1.2s cubic-bezier(.22, 1, .36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photobooth-hero *,
+  .photobooth-hero *::before,
+  .photobooth-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* ========================================
+   TALLER PHOTOS + ENCLOSED PHOTO BOOTH
+   Add after the existing photo booth CSS
+   ======================================== */
+
+/* Extend the blush booth around the whole strip */
+
+.photobooth-scene {
+  isolation: isolate;
+  width: min(100%, 340px);
+  padding-bottom: 22px;
+  background: var(--booth-blush);
+  border: 1px solid #cba7af;
+  border-radius: 20px 20px 12px 12px;
+  box-shadow:
+    inset 0 3px 0 #ffffff70,
+    0 5px 0 #d6b3bc,
+    0 12px 24px #493b3510;
+}
+
+/* The sign is now the top of one continuous machine */
+
+.photobooth-machine {
+  padding: 16px 17px 19px;
+  background: transparent;
+  border: 0;
+  border-radius: 19px 19px 0 0;
+  box-shadow: none;
+}
+
+/* A recessed cream panel behind the hanging strip */
+
+.photobooth-scene::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 125px;
+  bottom: 17px;
+  left: 16px;
+  right: 16px;
+  background: var(--booth-cream);
+  border: 1px solid #d6bdbb;
+  border-radius: 5px 5px 9px 9px;
+  box-shadow: inset 0 4px 10px #493b350b;
+  pointer-events: none;
+}
+
+/* Keep the opening above the recessed panel */
+
+.photobooth-slot {
+  position: relative;
+  z-index: 1;
+  height: 12px;
+  background: #65504c;
+  box-shadow:
+    inset 0 3px 4px #30232160,
+    0 1px 0 #ffffff80;
+}
+
+/* Clip the moving strip exactly where it leaves the slot */
+
+.photobooth-print-area {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin-top: -25px;
+  padding: 0 25px 20px;
+  overflow: hidden;
+}
+
+/* Cream paper strip */
+
+.photobooth-strip {
+  width: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 13px 10px 0;
+  background: var(--booth-paper);
+  border: 1px solid #ded0c1;
+  box-shadow:
+    3px 7px 12px #493b351c,
+    0 1px 2px #493b350c;
+  transform: rotate(-1.5deg);
+  transform-origin: center top;
+
+  /* Replace the previous short slide animation */
+  animation: none;
+}
+
+/* Taller photos: about 24% taller than your current ones */
+
+.photobooth-picture {
+  aspect-ratio: 6 / 5;
+  height: auto;
+  margin-bottom: 9px;
+}
+
+.photobooth-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Starting crop positions */
+
+.photobooth-picture-portrait img {
+  object-position: center 28%;
+}
+
+.photobooth-picture-barcelona img {
+  object-position: center 45%;
+}
+
+.photobooth-picture-camel img {
+  object-position: center 50%;
+}
+
+/* Give the handwritten caption its own space */
+
+.photobooth-strip figcaption {
+  padding: 7px 2px 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Remove the extra caption currently overlapping the strip */
+
+.photobooth-side-note {
+  display: none;
+}
+
+/* Feed the entire strip out of the slot, then gently settle */
+
+@keyframes photobooth-feed-down {
+  0% {
+    transform: translateY(-110%) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  88% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .photobooth-strip {
+    animation:
+      photobooth-feed-down 2.8s
+      cubic-bezier(.25, .65, .3, 1)
+      .2s both;
+  }
+}
+
+/* Slightly larger booth on desktop */
+
+@media (min-width: 800px) {
+  .photobooth-scene {
+    width: 360px;
+    max-width: 100%;
+  }
+
+  .photobooth-strip {
+    width: 220px;
+  }
+}
+
+/* Keep the full booth contained on small phones */
+
+@media (max-width: 360px) {
+  .photobooth-machine {
+    padding-inline: 13px;
+  }
+
+  .photobooth-print-area {
+    padding-inline: 20px;
+  }
+
+  .photobooth-strip {
+    width: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photobooth-strip {
+    animation: none;
+    transform: rotate(-1.5deg);
+  }
+}
+
+/* Match the footer's stripe spacing with softer colours. */
+.photobooth-hero {
+  background: repeating-linear-gradient(
+    to right,
+    #faedef 0 68px,
+    #f6e4e8 68px 136px
+  );
+  border-bottom: 1px solid #dfc3ca;
+}
+
+/* Warm gray booth casing */
+.photobooth-scene {
+  background: #dedbd7;
+  border-color: #b8b3ad;
+  box-shadow:
+    inset 0 3px 0 #f4f2ef,
+    0 4px 0 #c3bdb7,
+    0 10px 20px #493b3512;
+}
+
+/* Let the gray casing show around the sign. */
+.photobooth-machine {
+  background: transparent;
+}
+
+.photobooth-sign {
+  border-color: #c5c0ba;
+  box-shadow: inset 0 0 0 4px #eeebe6;
+}
+
+/* Gray trim around the cream photo compartment */
+.photobooth-scene::before {
+  border-color: #c4beb8;
+}
+
+/* Dark opening so the paper looks like it's feeding out */
+.photobooth-slot {
+  background: #514e4c;
+  border-color: #423f3d;
+}
+
+/* Light catches the upper-left edge of the gray casing. */
+.photobooth-scene {
+  background: linear-gradient(
+    110deg,
+    #e9e6e2 0%,
+    #dedbd7 32%,
+    #dad6d1 78%,
+    #cec9c3 100%
+  );
+  border: 1px solid #b5afa8;
+  box-shadow:
+    inset 2px 2px 0 #faf8f4,
+    inset -3px -2px 0 #c6c0b9,
+    0 4px 0 #b9b2aa,
+    3px 9px 14px #493b351a;
+}
+
+/* A thin rim gives the cream sign the depth of an inset plaque. */
+.photobooth-sign {
+  background: var(--booth-paper);
+  border: 1px solid #bcb6ae;
+  box-shadow:
+    inset 0 2px 3px #493b3514,
+    inset 0 0 0 4px #eeebe5,
+    0 1px 0 #faf8f4;
+}
+
+/* The tray is darkest just inside its top and left edges. */
+.photobooth-scene::before {
+  background: var(--booth-cream);
+  border-color: #bfb8af;
+  box-shadow:
+    inset 2px 4px 7px #55494024,
+    inset -1px -1px 0 #fffdf7,
+    0 1px 0 #f6f3ee;
+}
+
+/* A dark opening with a narrow, light-catching lower edge. */
+.photobooth-slot {
+  background: linear-gradient(#332f2d, #544f4b);
+  border-color: #49443f;
+  box-shadow:
+    inset 0 3px 3px #231f1d66,
+    0 1px 0 #faf7f1;
+}
+
+/* A stationary shadow falls across the moving paper at the slot. */
+.photobooth-print-area::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, var(--strip-width));
+  height: 9px;
+  background: linear-gradient(to bottom, #39312b36, transparent);
+  pointer-events: none;
+}
+
+.photobooth-scene {
+  --strip-width: 200px;
+}
+
+.photobooth-strip {
+  width: var(--strip-width);
+  box-shadow:
+    1px 2px 3px #493b351a,
+    4px 8px 10px #493b351c;
+}
+
+@media (min-width: 800px) {
+  .photobooth-scene {
+    --strip-width: 220px;
+  }
+}
+
+@media (max-width: 360px) {
+  .photobooth-scene {
+    --strip-width: 190px;
+  }
+}
+
+/* About: taped note beside a vintage photo passport */
+#about .about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 70px);
+}
+
+#about .about-layout > .travel-collage {
+  grid-column: 1 / -1;
+}
+
+/* About: a postcard beside a few handwritten facts */
+#about .about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+/* Cream postcard with a faded rose and sage airmail edge */
+#about .about-paper {
+  display: flow-root;
+  position: relative;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 38px);
+  border: 4px solid transparent;
+  border-radius: 3px;
+  background:
+    linear-gradient(var(--paper, #fffdf5), var(--paper, #fffdf5)) padding-box,
+    repeating-linear-gradient(
+      135deg,
+      #c797a1 0 10px,
+      #f8efdf 10px 20px,
+      #adb59e 20px 30px,
+      #f8efdf 30px 40px
+    ) border-box;
+  box-shadow: 3px 5px 0 #e8dece;
+  transform: rotate(-0.6deg);
+}
+
+/* The stamps share the greeting row; the bio gets the full width. */
+#about .about-postage {
+  float: right;
+  display: block;
+  width: clamp(64px, 7vw, 86px);
+  height: auto;
+  margin: -6px -4px 12px 16px;
+}
+
+#about .about-paper > .handwritten {
+  margin: 0 0 14px;
+  color: var(--rose, #a55364);
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1.3;
+}
+
+#about .about-paper > p:not(.handwritten) {
+  clear: both;
+  margin: 0;
+  color: var(--ink, #493b35);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+#about .about-paper > p:not(.handwritten) + p {
+  margin-top: 14px;
+}
+
+/* Facts sit directly on the section background. */
+#about .about-facts {
+  min-width: 0;
+}
+
+#about .about-facts h3 {
+  margin: 0 0 10px;
+  color: var(--rose, #a55364);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+#about .about-facts ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: about-fact;
+}
+
+#about .about-facts li {
+  counter-increment: about-fact;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line, #d8c7ba);
+  color: var(--ink, #493b35);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+#about .about-facts li::before {
+  content: counter(about-fact, decimal-leading-zero);
+  color: var(--rose, #a55364);
+  font-size: 11px;
+}
+
+#about .about-layout > .travel-collage {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  #about .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  #about .about-paper {
+    padding: 22px;
+    transform: none;
+  }
+
+  #about .about-facts h3 {
+    font-size: 20px;
+  }
+}
+
+/* About section: a wide postcard beside the facts */
+#about .about-layout {
+  grid-template-columns: minmax(0, 2.6fr) minmax(190px, 1fr);
+  gap: clamp(24px, 3vw, 42px);
+  align-items: center;
+}
+
+#about .about-paper.about-photo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 32px);
+  padding: clamp(24px, 3vw, 38px);
+  transform: none;
+}
+
+/* A slightly tilted print, with the caption level underneath */
+#about .about-card-portrait {
+  width: 100%;
+  max-width: 250px;
+  margin: 0;
+  justify-self: center;
+  text-align: center;
+}
+
+#about .about-card-portrait img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border: 7px solid #fffdf8;
+  box-shadow: 2px 5px 12px #493b3524;
+  transform: rotate(-2deg);
+}
+
+#about .about-card-portrait figcaption {
+  margin-top: 12px;
+  color: var(--rose, #a55364);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+#about .about-card-message {
+  min-width: 0;
+}
+
+#about .about-card-message > .handwritten {
+  margin: 0 0 14px;
+  color: var(--rose, #a55364);
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+#about .about-card-message > p {
+  margin: 0;
+  color: var(--ink, #493b35);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#about .about-card-message > p + p {
+  margin-top: 14px;
+}
+
+/* Tablet: give the postcard the full row before moving the facts below. */
+@media (max-width: 980px) {
+  #about .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Phone: centre the photo above the full-width, left-aligned bio. */
+@media (max-width: 600px) {
+  #about .about-paper.about-photo-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  #about .about-card-portrait {
+    max-width: 180px;
+  }
+}
+
+#about .about-paper.about-photo-card {
+  box-sizing: border-box;
+  width: min(100%, 650px);
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.5fr);
+  gap: 22px;
+  padding: 24px;
+}
+
+#about .about-card-portrait {
+  max-width: 165px;
+}
+
+#about .about-card-portrait img {
+  width: 100%;
+  height: auto;
+  border-width: 5px;
+}
+
+#about .about-card-portrait figcaption {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+#about .about-card-message > .handwritten {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+#about .about-card-message > p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#about .about-card-message > p + p {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  #about .about-paper.about-photo-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  #about .about-card-portrait {
+    max-width: 135px;
+  }
+
+  #about .about-card-message > p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 981px) {
+  #about .about-layout {
+    grid-template-columns: minmax(0, 650px) minmax(0, 1fr);
+    column-gap: 100px;
+  }
+
+  #about .about-paper.about-photo-card {
+    margin-inline: 0;
+    justify-self: start;
+  }
+
+  #about .about-facts {
+    width: 100%;
+    max-width: 310px;
+    justify-self: start;
+  }
 }

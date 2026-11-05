@@ -1,18 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    background: #f5ded8;
+    background: #faf6ec;
 }
 
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: #f5ded8;
-    color: #3e2921;
-    font-family: "Andada Pro", serif;
+    background: #faf6ec;
+    color: #493b35;
+    font-family: "DM Sans", sans-serif;
 }
 
 #backbtn {
@@ -24,10 +26,10 @@ body {
     padding: 11px;
     display: grid;
     place-items: center;
-    background: #fffaf1;
-    border: 2px dashed #b98070;
+    background: #fffdf5;
+    border: 2px dashed #a55364;
     border-radius: 8px;
-    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    box-shadow: 0 5px 12px rgb(73 59 53 / 18%);
     cursor: pointer;
     transform: rotate(-4deg);
     transition: transform 0.2s ease;
@@ -58,8 +60,8 @@ body {
 .project-label {
     display: inline-block;
     margin-bottom: 0.6rem;
-    color: #a45c6d;
-    font-family: "Advent Pro", sans-serif;
+    color: #a55364;
+    font-family: "DM Sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.13em;
@@ -68,8 +70,8 @@ body {
 
 .project-intro h1 {
     margin: 0 0 1rem;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 600;
     line-height: 0.95;
@@ -78,6 +80,7 @@ body {
 .project-intro p {
     max-width: 700px;
     margin: 0 auto;
+    color: #75645d;
     font-size: clamp(0.95rem, 1.5vw, 1.15rem);
     line-height: 1.5;
 }

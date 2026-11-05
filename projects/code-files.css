@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
 * {
     box-sizing: border-box;
 }
@@ -9,9 +11,9 @@ html, body {
 }
 
 body {
-    background: #f5ded8;
-    color: #3e2921;
-    font-family: "Andada Pro", serif;
+    background: #faf6ec;
+    color: #493b35;
+    font-family: "DM Sans", sans-serif;
 }
 
 .code-page {
@@ -29,8 +31,7 @@ body {
 .project-label {
     display: inline-block;
     margin-bottom: 0.8rem;
-    color: #a45c6d;
-    font-family: "Advent Pro", sans-serif;
+    color: #a55364;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.18rem;
@@ -39,25 +40,26 @@ body {
 
 .header h1 {
     margin: 0;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 400;
     line-height: 1;
 }
 
 .header p {
     margin: 1.25rem auto 0;
-    color: #795548;
+    color: #75645d;
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     line-height: 1.7;
 }
 
 .files-panel {
     padding: clamp(1.25rem, 4vw, 2.5rem);
-    background: #fffaf1;
-    border: 1px solid #c08d7e;
+    background: #fffdf5;
+    border: 1px solid #d8c7ba;
     border-radius: 14px;
-    box-shadow: 0 16px 35px rgb(62 41 33 / 14%);
+    box-shadow: 0 16px 35px rgb(73 59 53 / 14%);
 }
 
 .section-heading {
@@ -67,7 +69,7 @@ body {
     gap: 1rem;
     margin-bottom: 1.5rem;
     padding-bottom: 1.25rem;
-    border-bottom: 1px dashed #c08d7e;
+    border-bottom: 1px dashed #d8c7ba;
 }
 
 .section-heading > div {
@@ -78,9 +80,10 @@ body {
 
 .section-heading h2 {
     margin: 0;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400;
 }
 
 .section {
@@ -88,15 +91,14 @@ body {
     width: 42px;
     height: 42px;
     place-items: center;
-    color: #fffaf1;
-    background: #a45c6d;
+    color: #fffdf5;
+    background: #a55364;
     border-radius: 50%;
-    font-family: "Advent Pro", sans-serif;
     font-weight: 600;
 }
 
 .file-count {
-    color: #8b5e4a;
+    color: #75645d;
     font-size: 0.9rem;
 }
 
@@ -111,18 +113,18 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.2rem;
-    color: #3e2921;
+    color: #493b35;
     text-decoration: none;
-    background: #ffffff;
-    border: 1px solid #ead1c8;
+    background: #fffdf5;
+    border: 1px solid #d8c7ba;
     border-radius: 9px;
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .file-card:hover {
     transform: translateY(-3px);
-    border-color: #a45c6d;
-    box-shadow: 0 8px 18px rgb(62 41 33 / 12%);
+    border-color: #a55364;
+    box-shadow: 0 8px 18px rgb(73 59 53 / 12%);
 }
 
 .file-icon {
@@ -130,10 +132,9 @@ body {
     width: 54px;
     height: 54px;
     place-items: center;
-    color: #fffaf1;
-    background: #a45c6d;
+    color: #fffdf5;
+    background: #a55364;
     border-radius: 7px;
-    font-family: "Advent Pro", sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
 }
@@ -144,27 +145,26 @@ body {
 
 .file-info strong {
     display: block;
-    color: #5a382d;
+    color: #493b35;
     overflow-wrap: anywhere;
 }
 
 .file-info small {
     display: block;
     margin-top: 0.3rem;
-    color: #8b6a5e;
+    color: #75645d;
     line-height: 1.4;
 }
 
 .arrow {
-    color: #a45c6d;
-    font-family: "Advent Pro", sans-serif;
+    color: #a55364;
     font-weight: 600;
     white-space: nowrap;
 }
 
 .note {
     margin: 1.5rem auto 0;
-    color: #795548;
+    color: #75645d;
     font-size: 0.85rem;
     line-height: 1.6;
     text-align: center;
@@ -179,10 +179,10 @@ body {
     padding: 11px;
     display: grid;
     place-items: center;
-    background: #fffaf1;
-    border: 2px dashed #b98070;
+    background: #fffdf5;
+    border: 2px dashed #a55364;
     border-radius: 8px;
-    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    box-shadow: 0 5px 12px rgb(73 59 53 / 18%);
     cursor: pointer;
     transform: rotate(-4deg);
     transition: transform 0.2s ease;

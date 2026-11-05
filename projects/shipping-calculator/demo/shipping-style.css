@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
 * {
     box-sizing: border-box;
 }
@@ -10,9 +12,9 @@ html, body {
 
 body {
     overflow-x: hidden;
-    background: #f5ded8;
-    color: #3e2921;
-    font-family: "Andada Pro", serif;
+    background: #faf6ec;
+    color: #493b35;
+    font-family: "DM Sans", sans-serif;
 }
 
 button, input, select {
@@ -35,8 +37,7 @@ button, input, select {
 .project-label {
     display: inline-block;
     margin-bottom: 0.6rem;
-    color: #a45c6d;
-    font-family: "Advent Pro", sans-serif;
+    color: #a55364;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -44,8 +45,8 @@ button, input, select {
 
 .page-intro h1 {
     margin: 0;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 600;
     line-height: 1;
@@ -53,7 +54,7 @@ button, input, select {
 
 .page-intro p {
     margin: 1rem auto 0;
-    color: #795548;
+    color: #75645d;
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
     line-height: 1.7;
 }
@@ -62,10 +63,10 @@ button, input, select {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
     overflow: hidden;
-    background: #fffaf1;
-    border: 1px solid #c08d7e;
+    background: #fffdf5;
+    border: 1px solid #d8c7ba;
     border-radius: 16px;
-    box-shadow: 0 18px 45px rgb(62 41 33 / 16%);
+    box-shadow: 0 18px 45px #493b3529;
 }
 
 #shipping-form {
@@ -74,14 +75,15 @@ button, input, select {
 
 .form-heading h2, .result-panel h2 {
     margin: 0;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: 1.8rem;
+    font-weight: 400;
 }
 
 .form-heading p {
     margin: 0.35rem 0 0;
-    color: #795548;
+    color: #75645d;
     font-size: 0.92rem;
 }
 
@@ -99,7 +101,7 @@ button, input, select {
 .form-field label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #5a382d;
+    color: #493b35;
     font-weight: 500;
 }
 
@@ -107,17 +109,17 @@ button, input, select {
     width: 100%;
     min-height: 48px;
     padding: 0.75rem 0.9rem;
-    color: #3e2921;
-    background: white;
-    border: 1px solid #ccb9aa;
+    color: #493b35;
+    background: #ffffff;
+    border: 1px solid #d8c7ba;
     border-radius: 8px;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-field input:focus, .form-field select:focus {
-    border-color: #a45c6d;
-    box-shadow: 0 0 0 3px rgb(164 92 109 / 15%);
+    border-color: #a55364;
+    box-shadow: 0 0 0 3px #a5536426;
 }
 
 .form-field select {
@@ -136,7 +138,7 @@ button, input, select {
     position: absolute;
     top: 50%;
     right: 0.9rem;
-    color: #795548;
+    color: #75645d;
     font-size: 0.85rem;
     transform: translateY(-50%);
     pointer-events: none;
@@ -145,7 +147,7 @@ button, input, select {
 .helper {
     min-height: 2.5em;
     margin: 0.45rem 0 0;
-    color: #886e63;
+    color: #75645d;
     font-size: 0.78rem;
     line-height: 1.4;
 }
@@ -161,8 +163,8 @@ button, input, select {
     display: flex;
     align-items: flex-start;
     gap: 0.8rem;
-    background: #f9eee9;
-    border: 1px solid #ead2c9;
+    background: #faf0ed;
+    border: 1px solid #d8c7ba;
     border-radius: 9px;
     cursor: pointer;
 }
@@ -175,7 +177,7 @@ button, input, select {
     width: 18px;
     height: 18px;
     margin-top: 0.15rem;
-    accent-color: #a45c6d;
+    accent-color: #a55364;
     cursor: pointer;
 }
 
@@ -185,12 +187,12 @@ button, input, select {
 }
 
 .checkbox strong {
-    color: #5a382d;
+    color: #493b35;
     font-size: 0.9rem;
 }
 
 .checkbox small {
-    color: #795548;
+    color: #75645d;
     line-height: 1.4;
 }
 
@@ -211,7 +213,7 @@ button, input, select {
 .calculate-btn, .reset-btn {
     min-height: 46px;
     padding: 0.7rem 1.25rem;
-    font-family: "Advent Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 8px;
@@ -220,20 +222,20 @@ button, input, select {
 }
 
 .calculate-btn {
-    color: white;
-    background: #a45c6d;
-    border: 1px solid #a45c6d;
+    color: #fffdf5;
+    background: #a55364;
+    border: 1px solid #a55364;
 }
 
 .reset-btn {
-    color: #5a382d;
+    color: #493b35;
     background: transparent;
-    border: 1px solid #c08d7e;
+    border: 1px solid #d8c7ba;
 }
 
 .calculate-btn:hover, .reset-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgb(62 41 33 / 15%);
+    box-shadow: 0 5px 12px #493b3526;
 }
 
 .result-panel {
@@ -253,7 +255,7 @@ button, input, select {
 }
 
 .empty-result p {
-    color: #795548;
+    color: #75645d;
     font-size: 0.88rem;
     line-height: 1.6;
 }
@@ -264,7 +266,7 @@ button, input, select {
 
 .result-label {
     margin: 0;
-    color: #795548;
+    color: #75645d;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -272,8 +274,8 @@ button, input, select {
 
 .total-price {
     margin: 0.25rem 0 0;
-    color: #5a382d;
-    font-family: "Advent Pro", sans-serif;
+    color: #493b35;
+    font-family: "DM Serif Display", Georgia, serif;
     font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 600;
 }
@@ -281,7 +283,7 @@ button, input, select {
 .result-divider {
     height: 1px;
     margin: 1.5rem 0;
-    background: #a9c1c8;
+    background: #c49aa3;
 }
 
 #price-breakdown {
@@ -293,7 +295,7 @@ button, input, select {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    border-bottom: 1px solid rgb(90 56 45 / 10%);
+    border-bottom: 1px solid #493b351a;
 }
 
 .breakdown-row dt, .breakdown-row dd {
@@ -301,11 +303,11 @@ button, input, select {
 }
 
 .breakdown-row dt {
-    color: #795548;
+    color: #75645d;
 }
 
 .breakdown-row dd {
-    color: #5a382d;
+    color: #493b35;
     font-weight: 500;
 }
 
@@ -319,10 +321,10 @@ button, input, select {
     padding: 11px;
     display: grid;
     place-items: center;
-    background: #fffaf1;
-    border: 2px dashed #b98070;
+    background: #fffdf5;
+    border: 2px dashed #a55364;
     border-radius: 8px;
-    box-shadow: 0 5px 12px rgb(62 41 33 / 18%);
+    box-shadow: 0 5px 12px #493b352e;
     cursor: pointer;
     transform: rotate(-4deg);
     transition:
@@ -339,18 +341,18 @@ button, input, select {
 }
 
 #backbtn:hover {
-    background-color: #f7e5d9;
-    box-shadow: 0 7px 16px rgb(62 41 33 / 25%);
+    background-color: #efd6d8;
+    box-shadow: 0 7px 16px #493b3540;
     transform: rotate(0deg) translateY(-2px);
 }
 
 #backbtn:active {
     transform: rotate(0deg) translateY(1px);
-    box-shadow: 0 3px 7px rgb(62 41 33 / 18%);
+    box-shadow: 0 3px 7px  #493b352e;
 }
 
 #backbtn:focus-visible {
-    outline: 3px solid #a45c6d;
+    outline: 3px solid #a55364;
     outline-offset: 3px;
 }
 
@@ -459,7 +461,7 @@ button, input, select {
         width: 100%;
         min-width: 0;
         padding: 1.25rem;
-        border-top: 1px dashed #9cb9c2;
+        border-top: 1px dashed #c49aa3;
         border-left: 0;
         scroll-margin-top: 1rem;
     }
